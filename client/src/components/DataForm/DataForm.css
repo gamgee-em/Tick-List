@@ -1,0 +1,14 @@
+section {
+    height: auto;
+    width: 50vw;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+button {
+    justify-self: center;
+}
