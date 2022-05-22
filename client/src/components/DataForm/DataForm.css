@@ -3,6 +3,10 @@ section {
     width: 50vw;
 }
 
+select {
+    
+}
+
 form {
     display: grid;
     grid-template-columns: 1fr 1fr;
