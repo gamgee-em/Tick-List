@@ -36,10 +36,9 @@ const resolvers = {
             const boulder = await Boulder.create(args);
             return boulder;
         },
-        updateBoulder: async (parent, 
-            { _id, state, destination, area, sub_area, boulder_name, grade, stars, coords }) => {
+        updateBoulder: async (parent, { _id, state, destination, area, sub_area, boulder_name, grade, stars, coords }) => {
             
-            const boulder= await Boulder.findByIdAndUpdate( _id, 
+            const boulder = await Boulder.findByIdAndUpdate( _id, 
                 { 
                     _id,
                     state, 
@@ -55,19 +54,23 @@ const resolvers = {
             );
             return boulder;
         },
-        removeBoulder: async(parent, { _id }) => {
+        removeBoulder: async (parent, { _id }) => {
             const boulder = await Boulder.findByIdAndRemove(_id);
             return boulder;
         },
-        addUser: async(parent, args) => {
+        addUser: async (parent, args) => {
             const user = await User.create(args);
             return user;
         },
-        updateUser: async(parent, { _id, username, email, password }) => {
+        updateUser: async (parent, { _id, username, email, password }) => {
             const user = await User.findByIdAndUpdate(_id, 
                 { _id, username, email, password },
                 { new: true }    
             );
+            return user;
+        },
+        deleteUser: async (parent, { _id }) => {
+            const user = await User.findByIdAndRemove(_id);
             return user;
         }
     },

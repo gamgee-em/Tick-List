@@ -15,3 +15,13 @@ export const QUERY_BOULDERS = gql`
         }
     }
 `;
+
+export const QUERY_USERS = gql`
+    query getAllUsers {
+        getAllUsers {
+            _id
+            username
+            email
+        }
+    }
+`;

@@ -8,7 +8,7 @@ const DataForm = () => {
 
     const usStates = new UsaStates();
 
-    const [boulderState, setBoulderState] = useState({
+    const [ boulderState, setBoulderState ] = useState({
         state: '',
         destination: '',
         area: '',
@@ -23,7 +23,7 @@ const DataForm = () => {
         return { label: value.abbreviation , value: key }
     });
    
-    const [createBoulder, { error }] = useMutation(ADD_BOULDER);
+    const [ createBoulder, { error } ] = useMutation(ADD_BOULDER);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -37,20 +37,18 @@ const DataForm = () => {
             variables: { ...boulderState },
         });
 
-        console.log('BoulderState: ', boulderState)
-
         if (error) throw error;
 
         //! reset form
         setBoulderState({
-        state: '',
-        destination: '',
-        area: '',
-        sub_area: '',
-        boulder_name: '',
-        grade: '',
-        stars: '',
-        coords: '',
+            state: '',
+            destination: '',
+            area: '',
+            sub_area: '',
+            boulder_name: '',
+            grade: '',
+            stars: '',
+            coords: '',
         });
     };
 
@@ -79,7 +77,7 @@ const DataForm = () => {
                             </option>
                         )}
                     )}
-                    ∂
+                    
                 </select>
 
                 <input
