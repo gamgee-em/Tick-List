@@ -1,0 +1,38 @@
+.register-form {
+    display: grid;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15), 
+        0px 5px 10px rgba(0, 0, 0, 0.05);
+    grid-template-columns: 1fr;
+    gap: 5px;
+    width: 25vw;
+    padding: 2vh;
+}
+
+.register-form h4 {
+    margin: 0;
+}
+
+.register-form input, button {
+    border: 3px solid rgb(215, 215, 215);
+    outline: none;
+    height: 2vh;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.081);
+    transition: .5s;
+}
+
+
+.register-form input:focus {
+    border: 3px solid rgb(161, 159, 159);
+    box-shadow: 0 1px 3px rgb(161, 159, 159);
+}
+
+form .register-btn {
+    justify-self: start;
+}
+
+form .register-btn:hover {
+    cursor: pointer;
+    background-color: rgb(190, 190, 190);
+    transition: .5s;
+}

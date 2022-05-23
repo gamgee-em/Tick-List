@@ -1,18 +1,49 @@
-section {
-    height: auto;
-    width: 50vw;
-}
-
-select {
-    
-}
-
-form {
+.boulder-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
+    box-shadow: 
+        0px 15px 25px rgba(0, 0, 0, 0.15), 
+        0px 5px 10px rgba(0, 0, 0, 0.05);
+    padding: 1vh;
 }
 
-button {
-    justify-self: center;
+.boulder-form .select {
+    border: 3px solid rgb(215, 215, 215);
+    outline: none;
+    border-radius: 4px;
+}
+
+.boulder-form input, button, input[type='file']::file-selector-button {
+    border: 3px solid rgb(215, 215, 215);
+    outline: none;
+    height: 2vh;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.081);
+    transition: .5s;
+}
+
+input[type='file'] {
+    border: none;
+    box-shadow: none;
+}
+
+.boulder-form input:focus {
+    border: 3px solid rgb(161, 159, 159);
+    box-shadow: 0 1px 3px rgb(161, 159, 159);
+}
+
+input[type='file']:focus {
+    border: none;
+    box-shadow: none;
+}
+
+button, input[type='file']::file-selector-button {
+    justify-self: start;
+    cursor: pointer;
+    
+}
+button:hover, input[type='file']::file-selector-button:hover {
+    background-color: rgb(190, 190, 190);
+    transition: .5s;
 }

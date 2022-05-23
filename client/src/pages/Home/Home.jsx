@@ -1,7 +1,9 @@
-const Home = ({ DataForm }) => {
+import './Home.css';
+
+const Home = ({ RegisterForm }) => {
     return ( 
-        <main>
-            <DataForm/>
+        <main className='home-container'>
+            <RegisterForm />
         </main>
      );
 }

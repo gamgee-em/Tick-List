@@ -1,4 +1,4 @@
-const { Boulder } = require('../models');
+const { Boulder, User } = require('../models');
 
 const resolvers = {
     Query: {
@@ -22,6 +22,14 @@ const resolvers = {
             const boulders = await Boulder.find({ sub_area });
             return boulders;
         },
+        getAllUsers: async () => {
+            const users = await User.find({});
+            return users;
+        },
+        getSingleUser: async (parent, { _id }) => {
+            const user = await User.findById(_id);
+            return user;
+        }
     },
     Mutation: {
         addBoulder: async (parent, args) => {
@@ -43,15 +51,24 @@ const resolvers = {
                     stars,
                     coords
                 }, 
-                { 
-                    new: true 
-                }
+                { new: true }
             );
             return boulder;
         },
         removeBoulder: async(parent, { _id }) => {
             const boulder = await Boulder.findByIdAndRemove(_id);
             return boulder;
+        },
+        addUser: async(parent, args) => {
+            const user = await User.create(args);
+            return user;
+        },
+        updateUser: async(parent, { _id, username, email, password }) => {
+            const user = await User.findByIdAndUpdate(_id, 
+                { _id, username, email, password },
+                { new: true }    
+            );
+            return user;
         }
     },
 };

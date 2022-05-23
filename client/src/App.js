@@ -8,10 +8,14 @@ import {
 } from '@apollo/client';
 //import { setContext } from '@apollo/client/link/context'
 
+import { Routes, Route } from 'react-router-dom';
+
 import Home from './pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 import DataForm from './components/DataForm/DataForm';
 import { onError } from '@apollo/client/link/error';
+import RegisterForm from './components/RegisterForm/RegisterForm';
+import Profile from './pages/Profile/Profile';
 
 const errorLink = onError(({ graphqlErrors, networkError}) => {
   if (graphqlErrors) {
@@ -44,11 +48,13 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      {/* {" "} */}
-      <div className="App">
+     
         <Navbar />
-        <Home DataForm={ DataForm }/>      
-      </div>
+        <Routes>
+          <Route path='/' exact element={ <Home RegisterForm={ RegisterForm }/> } />
+          <Route path='/profile' exact element={ <Profile DataForm={ DataForm }/> } />
+        </Routes>
+      
     </ApolloProvider>
     
   );

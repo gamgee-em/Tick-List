@@ -37,7 +37,7 @@ const DataForm = () => {
             variables: { ...boulderState },
         });
 
-        console.log('BoulderState:', boulderState)
+        console.log('BoulderState: ', boulderState)
 
         if (error) throw error;
 
@@ -57,8 +57,8 @@ const DataForm = () => {
     return (
 
         <section>
-        <h2> Boulder Information </h2>
-            <form onSubmit={addBoulder}>
+            <h2> Boulder Information </h2>
+            <form className='boulder-form' onSubmit={addBoulder}>
                 <select 
                     className='select' 
                     name='state' 
@@ -132,7 +132,7 @@ const DataForm = () => {
                     value={boulderState.coords}
                     onChange={handleChange}
                 />
-                <input type='file' />
+                <input className='upload' type='file' />
                 <button type='submit'> Submit </button>
             </form>
         </section>
