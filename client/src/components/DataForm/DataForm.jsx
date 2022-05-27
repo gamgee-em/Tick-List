@@ -4,7 +4,8 @@ import { useMutation } from '@apollo/client';
 import { ADD_BOULDER } from '../../utils/mutations';
 const UsaStates = require('usa-states').UsaStates;
 
-const DataForm = () => {
+// pass user from profile page
+const DataForm = ({ user }) => {
 
     const usStates = new UsaStates();
 
@@ -52,10 +53,14 @@ const DataForm = () => {
         });
     };
 
+    const capFirstChar = (str) => {
+        return `${str[0].toUpperCase()}${str.slice(1, str.length)}'s`
+    };
+
     return (
 
         <section>
-            <h2> Boulder Information </h2>
+            <h2> { capFirstChar(user.username) } Boulder Information </h2>
             <form className='boulder-form' onSubmit={addBoulder}>
                 <select 
                     className='select' 

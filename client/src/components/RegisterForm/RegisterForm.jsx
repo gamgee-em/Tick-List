@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 
+import Auth from '../../utils/auth';
+
 const RegisterForm = () => {
 
     const [ userState, setUserState ] = useState({
@@ -20,12 +22,17 @@ const RegisterForm = () => {
 
     const addUser = async (e) => {
         e.preventDefault();
+        try{
+            const { data } = await createUser({
+                variables: { ...userState },
+            });
+            
+            Auth.login(data.addUser.token)
 
-        await createUser({
-            variables: { ...userState },
-        });
-
-        if (error) throw error;
+        } catch (err) {
+            console.error(err);
+        }
+        
 
         setUserState({
             username: '',

@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 export const QUERY_BOULDERS = gql`
     query getAllBoulders {
         getAllBoulders {
-            id
+            _id
             state
             destination
             area
@@ -19,6 +19,29 @@ export const QUERY_BOULDERS = gql`
 export const QUERY_USERS = gql`
     query getAllUsers {
         getAllUsers {
+            _id
+            token
+            username
+            email
+        }
+    }
+`;
+
+export const QUERY_USER = gql`
+    query getSingleUser($_id: ID!) {
+        getSingleUser(_id: $_id) {
+            _id
+            token
+            username
+            email
+        }
+    }
+`;
+
+
+export const QUERY_ME = gql`
+    query me {
+        me {
             _id
             username
             email

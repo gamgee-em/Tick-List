@@ -2,7 +2,7 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
     type Boulder {
-        id: ID!
+        _id: ID!
         state: String
         destination: String
         area: String
@@ -14,10 +14,15 @@ const typeDefs = gql`
     }
 
     type User {
-        id: ID!
+        _id: ID!
         username: String!
         email: String!
         password: String!
+    }
+
+    type Auth {
+        token: ID!
+        user: User
     }
 
     type Query {
@@ -28,19 +33,36 @@ const typeDefs = gql`
         getBouldersBySubArea(sub_area: String!): [Boulder]
 
         getAllUsers: [User]
-        getSingleUser(_id: ID, username: String): User
+        getSingleUser(_id: ID): User
+        me: User
     }
 
     type Mutation {
-        addBoulder(state: String, destination: String, area: String, sub_area: String, boulder_name: String!, grade: String, stars: String, coords: String): Boulder
-        updateBoulder(_id: ID!, state: String, destination: String, area: String, sub_area: String, boulder_name: String, grade: String, stars: String, coords: String): Boulder
+        addBoulder(
+            state: String, 
+            destination: String, 
+            area: String, sub_area: 
+            String, boulder_name: String!, 
+            grade: String, stars: String, 
+            coords: String
+        ): Boulder
+        updateBoulder(
+            _id: ID!, 
+            state: String, 
+            destination: String, 
+            area: String, sub_area: 
+            String, boulder_name: 
+            String, grade: String, 
+            stars: String, 
+            coords: String
+        ): Boulder
         removeBoulder(_id: ID!): Boulder
 
-        addUser(username: String!, email: String!, password: String!): User
+        addUser(username: String!, email: String!, password: String!): Auth
+        login(username: String!, password: String!): Auth
         updateUser(_id: ID!, username: String, email: String, password: String): User
         deleteUser(_id: ID!): User
     }   
 `;
 
 module.exports = typeDefs;
-

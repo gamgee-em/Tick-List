@@ -6,7 +6,7 @@ import {
   createHttpLink,
   from
 } from '@apollo/client';
-//import { setContext } from '@apollo/client/link/context'
+import { setContext } from '@apollo/client/link/context'
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -27,10 +27,10 @@ const errorLink = onError(({ graphqlErrors, networkError}) => {
 
 const httpLink = from ([
   errorLink,
-  createHttpLink({ uri: 'http://localhost:3141/graphql' })
+  createHttpLink({ uri: 'http://localhost:3001/graphql' })
 ]) 
 
-/* const authLink = setContext((_, { headers }) => {
+const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
   return {
     headers: {
@@ -38,10 +38,10 @@ const httpLink = from ([
       authorization: token ? `Bearer ${token}` : '',
     }
   }
-}); */
+});
 
 const client = new ApolloClient({
-  link: /* authLink.concat */(httpLink),
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -52,7 +52,9 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' exact element={ <Home RegisterForm={ RegisterForm }/> } />
-          <Route path='/profile' exact element={ <Profile DataForm={ DataForm }/> } />
+          <Route path='/me' exact element={ <Profile DataForm={ DataForm }/> } />
+          <Route path='/profile/:username' exact element={ <Profile DataForm={ DataForm }/> } />
+          <Route path='/me' exact element={ <Profile DataForm={ DataForm }/> } />
         </Routes>
       
     </ApolloProvider>
