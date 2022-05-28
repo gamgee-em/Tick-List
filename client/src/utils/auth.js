@@ -32,10 +32,10 @@ class AuthService {
       window.location.assign('/me');
     }
   
-/*     logout() {
+    logout() {
       localStorage.removeItem('id_token');
-      window.location.reload();
-    } */
+      window.location.replace('/');
+    }
   }
   
   export default new AuthService();
