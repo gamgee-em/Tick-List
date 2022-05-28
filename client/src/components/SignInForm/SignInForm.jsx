@@ -1,33 +1,34 @@
-import './RegisterForm.css';
+import './SignInForm.css';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../../utils/mutations';
+import { LOGIN_USER } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
-const RegisterForm = ({ handleForm }) => {
+const SignInForm = ({ handleForm }) => {
+
+
 
     const [ userState, setUserState ] = useState({
         username: '',
-        email: '',
         password: ''
     });
 
-    const [ createUser, { error } ] = useMutation(ADD_USER);
+    const [ signInUser, { error, data } ] = useMutation(LOGIN_USER);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         return setUserState({ ...userState, [name]: value });
     };
 
-    const addUser = async (e) => {
+    const signIn = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await createUser({
+            const { data } = await signInUser({
                 variables: { ...userState },
             });
             
-            Auth.login(data.addUser.token)
+            Auth.login(data.login.token)
 
         } catch (err) {
             console.error(err);
@@ -36,16 +37,15 @@ const RegisterForm = ({ handleForm }) => {
 
         setUserState({
             username: '',
-            email: '',
             password: ''
         });
     };
 
     return (
         <section>
-            <form className='register-form' onSubmit={addUser}>
-                <h4> Register </h4>
-                <button className='toggle-form' onClick={handleForm}> Sign In </button>
+            <form className='signin-form' onSubmit={signIn}>
+                <h4> Sign In </h4>
+                <button onClick={handleForm}> Register </button>
                 <input 
                     className='username' 
                     name='username'
@@ -54,14 +54,14 @@ const RegisterForm = ({ handleForm }) => {
                     value={userState.username}
                     onChange={handleChange}
                 />
-                <input 
+                {/* <input 
                     className='email'
                     name='email' 
                     type='email'
                     placeholder='Email'
                     value={userState.email}
                     onChange={handleChange}
-                />
+                /> */}
                 <input 
                     className='password'
                     name='password'
@@ -70,11 +70,11 @@ const RegisterForm = ({ handleForm }) => {
                     value={userState.password}
                     onChange={handleChange}
                 />
-                <button className='register-btn' type='submit'> Submit </button>
+                <button className='signin-btn' type='submit'> Submit </button>
             </form>
         </section>
         
      );
 }
  
-export default RegisterForm;
+export default SignInForm;

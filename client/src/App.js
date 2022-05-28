@@ -15,6 +15,7 @@ import Navbar from './components/Navbar/Navbar';
 import DataForm from './components/DataForm/DataForm';
 import { onError } from '@apollo/client/link/error';
 import RegisterForm from './components/RegisterForm/RegisterForm';
+import SignInForm from './components/SignInForm/SignInForm';
 import Profile from './pages/Profile/Profile';
 
 const errorLink = onError(({ graphqlErrors, networkError}) => {
@@ -51,10 +52,9 @@ const App = () => {
      
         <Navbar />
         <Routes>
-          <Route path='/' exact element={ <Home RegisterForm={ RegisterForm }/> } />
+          <Route path='/' exact element={ <Home RegisterForm={ RegisterForm } SignInForm={ SignInForm }/> } />
           <Route path='/me' exact element={ <Profile DataForm={ DataForm }/> } />
           <Route path='/profile/:username' exact element={ <Profile DataForm={ DataForm }/> } />
-          <Route path='/me' exact element={ <Profile DataForm={ DataForm }/> } />
         </Routes>
       
     </ApolloProvider>
