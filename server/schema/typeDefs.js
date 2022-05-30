@@ -59,7 +59,7 @@ const typeDefs = gql`
         removeBoulder(_id: ID!): Boulder
 
         addUser(username: String!, email: String!, password: String!): Auth
-        login(username: String!, password: String!): Auth
+        loginUser(username: String!, password: String!): Auth
         updateUser(_id: ID!, username: String, email: String, password: String): User
         deleteUser(_id: ID!): User
     }   

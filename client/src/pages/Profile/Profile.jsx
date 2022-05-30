@@ -7,7 +7,10 @@ import Auth from '../../utils/auth';
 
 import './Profile.css';
 
-const Profile = ({ DataForm }) => {
+import { chartData, options } from '../../components/Chart/Chart';
+
+
+const Profile = ({ DataForm, Chart, TickList }) => {
     const { userID: userParam } = useParams();
 
     const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -36,7 +39,16 @@ const Profile = ({ DataForm }) => {
 
     return ( 
         <main className='profile-container'>
-            <DataForm user={user} />
+            <DataForm className='data-form' user={user} />
+            <div className='chart'>
+            <Chart 
+                chartType="BarChart"
+                data={chartData} 
+                options={options}
+            />
+            </div>
+            
+            <TickList />
         </main>
      );
 }

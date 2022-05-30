@@ -1,5 +1,9 @@
 .profile-container {
-    display: flex;
+    display: grid;
+    height: 94vh;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     justify-content: center;
     align-content: center;
+    gap: 25px;
 }

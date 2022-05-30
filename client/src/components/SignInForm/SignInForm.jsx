@@ -7,14 +7,12 @@ import Auth from '../../utils/auth';
 
 const SignInForm = ({ handleForm }) => {
 
-
-
     const [ userState, setUserState ] = useState({
         username: '',
         password: ''
     });
 
-    const [ signInUser, { error, data } ] = useMutation(LOGIN_USER);
+    const [ signInUser, { error } ] = useMutation(LOGIN_USER);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -28,7 +26,7 @@ const SignInForm = ({ handleForm }) => {
                 variables: { ...userState },
             });
             
-            Auth.login(data.login.token)
+            Auth.login(data.loginUser.token)
 
         } catch (err) {
             console.error(err);
@@ -45,26 +43,20 @@ const SignInForm = ({ handleForm }) => {
         <section>
             <form className='signin-form' onSubmit={signIn}>
                 <h4> Sign In </h4>
-                <button onClick={handleForm}> Register </button>
+                <button className='toggle-signin' onClick={handleForm}> Register </button>
                 <input 
                     className='username' 
                     name='username'
+                    autoComplete="on"
                     type='text'
                     placeholder='Username'
                     value={userState.username}
                     onChange={handleChange}
                 />
-                {/* <input 
-                    className='email'
-                    name='email' 
-                    type='email'
-                    placeholder='Email'
-                    value={userState.email}
-                    onChange={handleChange}
-                /> */}
                 <input 
                     className='password'
                     name='password'
+                    autoComplete='on'
                     type='password'
                     placeholder='Password'
                     value={userState.password}

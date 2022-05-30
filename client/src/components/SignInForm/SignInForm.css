@@ -1,15 +1,42 @@
 .signin-form {
     display: grid;
+    justify-content: center;
+    align-items: center;
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.15), 
         0px 5px 10px rgba(0, 0, 0, 0.05);
-    grid-template-columns: 1fr;
-    gap: 5px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     width: 25vw;
+    height: 15vh;
+    gap: 5px;
     padding: 2vh;
+
 }
 
 .signin-form h4 {
+    grid-row: 3 / 4;
+    grid-column: 1 / 5;
     margin: 0;
+}
+
+.signin-form .toggle-signin {
+    grid-row: 3 / 4;
+    grid-column: 10 / 11;
+}
+
+.signin-form .username {
+    grid-row: 4 / 5;
+    grid-column: 1 / 12;
+}
+
+.signin-form .password {
+    grid-row: 5 / 6;
+    grid-column: 1 / 12;
+}
+
+.signin-form .signin-btn {
+    grid-row: 6 / 7;
+    grid-column: 1 / 2;
 }
 
 .signin-form input, button {

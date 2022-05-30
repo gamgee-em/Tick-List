@@ -59,7 +59,7 @@ const DataForm = ({ user }) => {
 
     return (
 
-        <section>
+        <section className='data-form'>
             <h2> { capFirstChar(user.username) } Boulder Information </h2>
             <form className='boulder-form' onSubmit={addBoulder}>
                 <select 

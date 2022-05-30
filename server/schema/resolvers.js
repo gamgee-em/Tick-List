@@ -74,7 +74,7 @@ const resolvers = {
 
             return { token, user };
         },
-        login: async (parent, { username, password }) => {
+        loginUser: async (parent, { username, password }) => {
             const user = await User.findOne({ username });
 
             if (!user) throw new AuthenticationError('No user found. Check for accuracy and try again.');

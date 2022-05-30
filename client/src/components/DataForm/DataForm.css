@@ -1,3 +1,12 @@
+.data-form {
+    grid-column: 2 / 12;
+    grid-row: 2 / 3;
+}
+
+section h2 {
+    text-align: center;
+}
+
 .boulder-form {
     display: grid;
     grid-template-columns: 1fr 1fr;

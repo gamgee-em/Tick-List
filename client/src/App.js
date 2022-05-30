@@ -17,6 +17,8 @@ import { onError } from '@apollo/client/link/error';
 import RegisterForm from './components/RegisterForm/RegisterForm';
 import SignInForm from './components/SignInForm/SignInForm';
 import Profile from './pages/Profile/Profile';
+import Chart from 'react-google-charts';
+import TickList from './components/TickList/TickList';
 
 const errorLink = onError(({ graphqlErrors, networkError}) => {
   if (graphqlErrors) {
@@ -53,7 +55,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' exact element={ <Home RegisterForm={ RegisterForm } SignInForm={ SignInForm }/> } />
-          <Route path='/me' exact element={ <Profile DataForm={ DataForm }/> } />
+          <Route path='/me' exact element={ <Profile DataForm={ DataForm } Chart={ Chart } TickList={ TickList }/>} />
           <Route path='/profile/:username' exact element={ <Profile DataForm={ DataForm }/> } />
         </Routes>
       

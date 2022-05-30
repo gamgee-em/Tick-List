@@ -45,11 +45,12 @@ const RegisterForm = ({ handleForm }) => {
         <section>
             <form className='register-form' onSubmit={addUser}>
                 <h4> Register </h4>
-                <button className='toggle-form' onClick={handleForm}> Sign In </button>
+                <button className='toggle-register' onClick={handleForm}> Sign In </button>
                 <input 
                     className='username' 
                     name='username'
                     type='text'
+                    autoComplete='on'
                     placeholder='Username'
                     value={userState.username}
                     onChange={handleChange}
@@ -58,6 +59,7 @@ const RegisterForm = ({ handleForm }) => {
                     className='email'
                     name='email' 
                     type='email'
+                    autoComplete='on'
                     placeholder='Email'
                     value={userState.email}
                     onChange={handleChange}
@@ -66,6 +68,7 @@ const RegisterForm = ({ handleForm }) => {
                     className='password'
                     name='password'
                     type='password'
+                    autoComplete='on'
                     placeholder='Password'
                     value={userState.password}
                     onChange={handleChange}
