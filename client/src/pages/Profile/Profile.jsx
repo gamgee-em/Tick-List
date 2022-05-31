@@ -11,7 +11,7 @@ import { chartData, options } from '../../components/Chart/Chart';
 
 
 const Profile = ({ DataForm, Chart, TickList }) => {
-    const { userID: userParam } = useParams();
+    const { _id: userParam } = useParams();
 
     const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
         variables: { _id: userParam },
@@ -19,7 +19,7 @@ const Profile = ({ DataForm, Chart, TickList }) => {
 
     //! pass as prop to DataFrom component
     const user = data?.me || data?.user || {};
-
+    
     if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
         return <Navigate to='me' />;
     };
@@ -48,7 +48,7 @@ const Profile = ({ DataForm, Chart, TickList }) => {
             />
             </div>
             
-            <TickList />
+            <TickList user={user} />
         </main>
      );
 }

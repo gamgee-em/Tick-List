@@ -23,6 +23,10 @@ export const QUERY_USERS = gql`
             token
             username
             email
+            ticks {
+                route_name
+                difficulty
+            }
         }
     }
 `;
@@ -34,6 +38,10 @@ export const QUERY_USER = gql`
             token
             username
             email
+            ticks {
+                route_name
+                grade
+            }
         }
     }
 `;
@@ -45,6 +53,10 @@ export const QUERY_ME = gql`
             _id
             username
             email
+            ticks {
+                route_name
+                difficulty
+            }
         }
     }
 `;

@@ -18,6 +18,13 @@ const typeDefs = gql`
         username: String!
         email: String!
         password: String!
+        ticks: [Tick]
+    }
+
+    type Tick {
+        _id: ID!
+        route_name: String
+        difficulty: String
     }
 
     type Auth {
@@ -35,14 +42,16 @@ const typeDefs = gql`
         getAllUsers: [User]
         getSingleUser(_id: ID): User
         me: User
+        ticks: [Tick]
     }
 
     type Mutation {
         addBoulder(
             state: String, 
             destination: String, 
-            area: String, sub_area: 
-            String, boulder_name: String!, 
+            area: String, 
+            sub_area: String, 
+            boulder_name: String!, 
             grade: String, stars: String, 
             coords: String
         ): Boulder
@@ -62,6 +71,8 @@ const typeDefs = gql`
         loginUser(username: String!, password: String!): Auth
         updateUser(_id: ID!, username: String, email: String, password: String): User
         deleteUser(_id: ID!): User
+
+        addTick(route_name: String!, difficulty: String!): Tick
     }   
 `;
 

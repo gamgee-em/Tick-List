@@ -1,8 +1,35 @@
-.tick-list {
+.tick-list-container {
     grid-row: 3 / 7;
     grid-column: 7 / 12;
     box-shadow: 
         0px 15px 25px rgba(0, 0, 0, 0.15), 
         0px 5px 10px rgba(0, 0, 0, 0.05);
     padding: 1vh;
+}
+
+h3 {
+    text-align: center;
+    margin: 1vh;
+}
+
+.tick-list-header, .tick-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+}
+
+.route-name {
+    justify-self: start;
+}
+
+.tick-list {
+    padding: 5px 0;
+}
+
+.difficulty {
+    justify-self: end;
+}
+
+.tick-list .difficulty {
+    padding: 0 17px 0 0;
 }

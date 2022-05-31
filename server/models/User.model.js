@@ -19,7 +19,21 @@ const userSchema = new Schema(
             type: String,
             required: 'Password is required',
             trim: true,
-        }
+        },
+        ticks: [
+            {
+                route_name: {
+                    type: String,
+                    required: false,
+                    trim: true,
+                },
+                difficulty: {
+                    type: String,
+                    require: false,
+                    trim: true,
+                },
+            },
+        ],
     },
 );
 
