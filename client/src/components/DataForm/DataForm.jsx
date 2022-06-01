@@ -1,11 +1,68 @@
 import './DataForm.css';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_BOULDER } from '../../utils/mutations';
+import { ADD_BOULDER, ADD_TICK } from '../../utils/mutations';
 const UsaStates = require('usa-states').UsaStates;
 
-// pass user from profile page
 const DataForm = ({ user }) => {
+
+    const [ tickState, setTickState ] = useState({
+        route_name: '',
+        difficulty: '',
+    });
+   
+    const [ createTick , { error } ] = useMutation(ADD_TICK);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        return setTickState({ ...tickState, [name]: value });
+    };
+
+    const addTick = async (e) => {
+        //e.preventDefault();
+        try {
+            await createTick({
+                variables: { ...tickState },
+            });
+            console.log(createTick)
+        } catch(error) {
+            console.error(error);
+        }
+
+        //! reset form
+        setTickState({
+            route_name: '',
+            difficulty: '',
+        });
+    };
+
+    return ( 
+        <section className="data-form">
+              <h2> {user.username} Boulder Information </h2>
+            <form className='boulder-form' onSubmit={addTick}>
+                <input 
+                    name='route_name'
+                    type='text'
+                    placeholder='Route Name'
+                    value={tickState.route_name}
+                    onChange={handleChange}
+                    required
+                />
+                <input  
+                    name='difficulty'
+                    type='number'
+                    placeholder='Difficulty'
+                    value={tickState.difficulty}
+                    onChange={handleChange}
+                />
+                <button type='submit'> Submit </button>
+            </form>
+        </section>
+     );
+};
+
+// pass user from profile page
+/* const DataForm = ({ user }) => {
 
     const usStates = new UsaStates();
 
@@ -142,5 +199,5 @@ const DataForm = ({ user }) => {
         
     );
 };
-
+ */
 export default DataForm;

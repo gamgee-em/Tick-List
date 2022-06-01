@@ -3,6 +3,7 @@ import './TickList.css';
 const TickList = ({ user }) => {
 
     return (
+
         !user.ticks.length ? (
             <section className='tick-list-container'>
                 <h3> No Ticks Yet</h3>
@@ -15,17 +16,17 @@ const TickList = ({ user }) => {
                     <th className='difficulty'> Grade </th>
                 </div>
                 
-                { user.ticks.map((tick, i) => {
-                    return(
+                { user.ticks.map(tick => {
+                    return (
                         <div className='tick-list' key={tick._id}> 
                             <div className='route-name'>{tick.route_name} </div>
-                            <div className='difficulty'>{tick.difficulty} </div>
-                        </div>)
-                    })
-                }
+                            <div className='difficulty'>v{tick.difficulty} </div>
+                        </div>
+                    )
+                })}
             </section>
         )
-    ); 
-}
+    );
+};
  
 export default TickList;

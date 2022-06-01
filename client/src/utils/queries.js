@@ -40,7 +40,7 @@ export const QUERY_USER = gql`
             email
             ticks {
                 route_name
-                grade
+                difficulty
             }
         }
     }

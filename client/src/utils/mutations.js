@@ -41,11 +41,11 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_TICK = gql`
-    mutation addTick($route_name: String!, $grade: String!) {
-        addTick(route_name: $route_name, grade: $grade) {
+    mutation addTick($route_name: String!, $difficulty: String!) {
+        addTick(route_name: $route_name, difficulty: $difficulty) {
             _id
             route_name
-            grade
+            difficulty
             
         }
     }
