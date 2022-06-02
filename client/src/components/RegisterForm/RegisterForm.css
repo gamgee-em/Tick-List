@@ -52,7 +52,6 @@
     transition: .5s;
 }
 
-
 .register-form input:focus {
     border: 3px solid rgb(161, 159, 159);
     box-shadow: 0 1px 3px rgb(161, 159, 159);

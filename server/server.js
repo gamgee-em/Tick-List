@@ -3,6 +3,7 @@ const { ApolloServer } = require('apollo-server-express');
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core');
 require('dotenv').config();
 const path  = require('path');
+
 const { typeDefs, resolvers } = require('./schema');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
@@ -27,7 +28,7 @@ const startServer = async () => {
 
     if (process.env.NODE_ENV === 'production') {
         app.use(express.static(path.join(__dirname, '../client/build')));
-    }
+    };
     
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../client/build/index.html'));
@@ -39,6 +40,6 @@ const startServer = async () => {
             console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
         });
     });
-}
+};
 
 startServer();

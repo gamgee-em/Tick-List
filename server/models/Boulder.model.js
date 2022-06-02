@@ -36,7 +36,6 @@ const boulderSchema = new Schema(
             type: String,
             required: false
         }
-        
     }
 );
 

@@ -1,8 +1,8 @@
 import './DataForm.css';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_BOULDER, ADD_TICK } from '../../utils/mutations';
-const UsaStates = require('usa-states').UsaStates;
+import {/*  ADD_BOULDER, */ ADD_TICK } from '../../utils/mutations';
+//const UsaStates = require('usa-states').UsaStates;
 
 const DataForm = ({ user }) => {
 
@@ -11,7 +11,7 @@ const DataForm = ({ user }) => {
         difficulty: '',
     });
    
-    const [ createTick , { error } ] = useMutation(ADD_TICK);
+    const [ createTick /* , { error }  */] = useMutation(ADD_TICK);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -36,9 +36,13 @@ const DataForm = ({ user }) => {
         });
     };
 
+    const capFirstChar = (str) => {
+        return `${str[0].toUpperCase()}${str.slice(1, str.length)}'s`
+    };
+
     return ( 
         <section className="data-form">
-              <h2> {user.username} Boulder Information </h2>
+              <h2> {capFirstChar(user.username)} Boulder Information </h2>
             <form className='boulder-form' onSubmit={addTick}>
                 <input 
                     name='route_name'
@@ -61,7 +65,7 @@ const DataForm = ({ user }) => {
      );
 };
 
-// pass user from profile page
+//! move to own component to use in 'the climbers fieldguide' page
 /* const DataForm = ({ user }) => {
 
     const usStates = new UsaStates();

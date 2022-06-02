@@ -10,7 +10,6 @@
     height: 15vh;
     gap: 5px;
     padding: 2vh;
-
 }
 
 .signin-form h4 {
@@ -47,7 +46,6 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.081);
     transition: .5s;
 }
-
 
 .signin-form input:focus {
     border: 3px solid rgb(161, 159, 159);

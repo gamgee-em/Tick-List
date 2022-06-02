@@ -13,7 +13,7 @@ const RegisterForm = ({ handleForm }) => {
         password: ''
     });
 
-    const [ createUser, { error } ] = useMutation(ADD_USER);
+    const [ createUser, /* { error } */ ] = useMutation(ADD_USER);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -76,8 +76,7 @@ const RegisterForm = ({ handleForm }) => {
                 <button className='register-btn' type='submit'> Submit </button>
             </form>
         </section>
-        
      );
-}
+};
  
 export default RegisterForm;

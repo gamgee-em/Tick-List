@@ -46,7 +46,6 @@ export const ADD_TICK = gql`
             _id
             route_name
             difficulty
-            
         }
     }
 `;

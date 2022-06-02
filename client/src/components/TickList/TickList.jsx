@@ -12,8 +12,8 @@ const TickList = ({ user }) => {
             <section className='tick-list-container'>
                 <h3> Ticks </h3>
                 <div className='tick-list-header'>
-                    <th className='route-name'> Route Name </th>
-                    <th className='difficulty'> Grade </th>
+                    <th className='route-title'> Route Name </th>
+                    <th className='difficulty-title'> Grade </th>
                 </div>
                 
                 { user.ticks.map(tick => {

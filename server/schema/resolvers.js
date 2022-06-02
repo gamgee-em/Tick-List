@@ -57,9 +57,9 @@ const resolvers = {
             const correctPassword = user.isCorrectPassword(password);
 
             if (!correctPassword) throw new AuthenticationError('Incorrect password. Check for accuracy and try again.');
-
+            
             const token = signToken(user);
-
+            
             return { token, user };
         },
         updateUser: async (parent, { _id, username, email, password }) => {
@@ -67,12 +67,10 @@ const resolvers = {
                 { _id, username, email, password },
                 { new: true }    
             );
-
             return user;
         },
         deleteUser: async (parent, { _id }) => {
             const user = await User.findByIdAndRemove(_id);
-
             return user;
         },
         addBoulder: async (parent, args) => {
@@ -94,22 +92,19 @@ const resolvers = {
                 }, 
                 { new: true }
             );
-
             return boulder;
         },
         removeBoulder: async (parent, { _id }) => {
             const boulder = await Boulder.findByIdAndRemove(_id);
-
             return boulder;
         },
         addTick: async (parent, { route_name, difficulty }, context) => {
             if(context.user) {
-                const tick = await User.findOneAndUpdate({
-                    _id: context.user._id,
-                    /* route_name: context.user.route_name,
-                    difficulty: context.user.difficulty */
+                const tick = await User.findOneAndUpdate(
+                    {
+                        _id: context.user._id,
                     }, 
-                    { $addToSet: {ticks: [{ route_name, difficulty }] } },
+                    { $addToSet: { ticks: [{ route_name, difficulty }] } },
                     { new: true },
                 );
                 console.log('Tick: ', tick);
