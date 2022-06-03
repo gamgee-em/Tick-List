@@ -1,136 +1,34 @@
-<style>
-
-    body {
-        background-color: black;
-        font-family: Georgia, serif, arial;
-        margin: 0;
-        padding: 0;
-    }
-
-    .badges {
-        position: sticky;
-        top: 0;
-        text-align: center;
-        padding-top: 1vh;
-        z-index: 1;
-    }
-
-    .badges img {
-        outline: .1px solid plum;
-        margin: 0 5px;
-    }
-
-    .title-container {
-        text-align: center;
-        position: relative;
-    }
-
-    h1 {
-        color: #3465a9;
-        font-size: 6rem;
-        text-shadow: 1px 1px black;
-        margin: 1vh 0;
-        padding: 0;
-    }
-
-    .title-container p {
-        text-align: center;
-        font-size: 2rem;
-        color: /* white */ /* #8881a4 */ darkgray;
-        text-shadow: .5px .5px black;
-        padding: 0 3vw;
-       
-    }
-
-    details {
-        position: relative;
-        color: black;
-        z-index: 1;
-       /*  margin: 0 0 0 1vw; */
-    }
-
-    details summary {
-        color: #3465a9;
-        font-size: 40px;
-        font-weight: bold;
-        margin-left: 1.5vw;
-        cursor: pointer;
-    }
-
-    ol {
-        margin-left: 2vw;
-    }
-
-    summary::marker {
-        color: /* #8881a4 */ darkgray;
-    }
-
-    details ol li a {
-        /* font-weight: bold; */
-        font-size: 25px;
-        color: /* white *//* #8881a4 */ darkgray;
-        text-shadow: 1px 1px black;
-        padding-left: .5vw;
-    }
-
-    details ol li a:hover {
-        color: #3465a9;
-        text-decoration: none;
-    }
-
-    ol li::marker {
-        font-size: 15px;
-        color: /* #8881a4 */ darkgray;
-        font-weight: bold;
-        text-shadow: 1px 1px black;
-    }
-
-    .buttermilks {
-        position: relative;
-        width: 100%;
-        height: auto;
-    }
-
-    h2 {
-        font-size: 3rem;
-        color: #3465a9;
-    }
-
-</style>
-
-<body>
-
 <div id="top"/>
-<div class='badges'>
+<div align='center'>
 
 [![GitHub][github-shield]][github-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![MIT License][license-shield]][license-url]
 [![JavaScript][javascript-shield]][javascript-url] 
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
 </div>
-<div class='title-container'>
-
-<h1>Tick List</h1>
+<div align='center'>
+    
+<h1 >Tick List</h1>
 
 <p>
-    Welcome to Tick List! Tick List is a full stack application that allows the user to keep record of thier 'Ticks'. 
-    A 'Tick' is rock climbing slang for when a climber completes a route from start to finish. Typically when a climber 
+    Welcome to <strong>Tick List</strong>! Tick List is a full stack application that allows the user to keep record of thier Tick's. 
+    A Tick is rock climbing slang for when a climber completes a route from start to finish. When a climber 
     achieves this it's common practice to add that route to your 'Tick List'
 </p>
 
+#
+    
 </div>
 
-
 <details>
-<summary>Table of Contents</summary>
+    <summary><h2>Table of Contents</h2></summary>
     <ol>
         <li>
-            <a href="#about-the-project">About The Project</a>
+            <a href='#about'>About The Project</a>
             <ul>
                 <li><a href="#built-with">Built With</a></li>
             </ul>
@@ -151,15 +49,21 @@
     </ol>
 </details>
 
-<img class='buttermilks' src="./client/public/images/buttermilks_bouldering.jpeg" alt='Climber in Bishop, CA'/>
+<img width='100%' src="./client/public/images/buttermilks_bouldering.jpeg" alt='Climber in Bishop, CA'/>
 
 <div>
 
-<h2> About The Project </h2>
+<h2 id='about'> About The Project </h2>
 
+<p> 
+I've found myself using other <strong>"Tick List"</strong> style applications that only allow you to use routes available from their database. However, as an adventrous climber, many of the routes I've persued have been off the beaten path. This leads to the data pertaining to my climbing performance skewed. So, I chose to build an application, albeit less convenient that gives the user control over their performance data. 
+</p>
+
+#
+    
 </div>
-    <p align="right"> (<a href="#top">back to top</a>) </p>
-</body>
+<p align="right"> (<a href="#top">back to top</a>) </p>
+
 
 
 
