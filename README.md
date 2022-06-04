@@ -19,8 +19,6 @@
     A Tick is rock climbing slang for when a climber completes a route from start to finish. When a climber 
     achieves this it's common practice to add that route to your 'Tick List'
 </p>
-
-#
     
 </div>
 
@@ -29,14 +27,11 @@
     <ol>
         <li>
             <a href='#about'>About The Project</a>
-            <ul>
-                <li><a href="#built-with">Built With</a></li>
-            </ul>
         </li>
         <li>
             <a href="#getting-started">Getting Started</a>
             <ul>
-                <li><a href="#prerequisites">Prerequisites</a></li>
+                <li><a href='#dependencies'>Dependencies</a></li>
                 <li><a href="#installation">Installation</a></li>
             </ul>
         </li>
@@ -49,27 +44,83 @@
     </ol>
 </details>
 
-<img width='100%' src="./client/public/images/buttermilks_bouldering.jpeg" alt='Climber in Bishop, CA'/>
+#
 
-<div>
+<img width='100%' src="./client/public/images/buttermilks_bouldering.jpeg" alt='Climber in Bishop, CA'/>
 
 <h2 id='about'> About The Project </h2>
 
 <p> 
-I've found myself using other <strong>"Tick List"</strong> style applications that only allow you to use routes available from their database. However, as an adventrous climber, many of the routes I've persued have been off the beaten path. This leads to the data pertaining to my climbing performance skewed. So, I chose to build an application, albeit less convenient that gives the user control over their performance data. 
+    I've found myself using other <strong>"Tick List"</strong> style applications that only allow you to use routes available from their database.          However, as an adventrous climber, many of the routes I've persued have been off the beaten path. This leads to the data pertaining to my climbing      performance skewed. So, I chose to build an application, albeit less convenient that gives the user control over their performance data. 
 </p>
 
-#
-    
-</div>
-<p align="right"> (<a href="#top">back to top</a>) </p>
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 
+<h2 id='dependencies'> Dependencies </h2>
 
+<table align='left'>
+    <tr>
+        <th colspan="1"> Client </th>
+        <th rowspan="8">  </th>
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/react'> React </a> </td> 
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/@apollo/client'> ApolloClient </a> </td>
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/graphql'> GraphQL </a> </td> 
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/jwt-decode'> JWT-Decode </a> </td> 
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/react-dom'> React-Dom </a> </td>
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/react-scripts'> React-Scripts </a> </td>
+    </tr>
+    <tr>  
+        <td> <a href='https://www.npmjs.com/package/react-google-charts'> React-Google-Charts </a> </td>
+    </tr>    
+</table>
 
+<table>
+    <tr>
+        <th colspan="1"> Server </th>
+    </tr> 
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/apollo-server-express'> Apollo-Server-Express </a> </td> </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/express'> Express </a> </td> 
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/graphql'> GraphQL </a> </td> 
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/mongoose'> Mongoose </td> 
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/bcrypt'> Bcrypt </a> </td> 
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/dotenv'> DotEnv </a> </td> 
+    </tr>
+    <tr> 
+        <td> <a href='https://www.npmjs.com/package/jsonwebtoken'> Json Web Token </a> </td> 
+    </tr>
+</table>
 
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 
+<h2 id='installation'> Installation </h2>
 
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 
+<p align="right"> 
+    (<a href="#top">back to top</a>) 
+</p>
 
 [github-shield]: https://img.shields.io/badge/Gamgee--Em-%23121011.svg?style=for-the-badge&logo=github&logoColor=black&colorB=e68718
 [github-url]: https://github.com/gamgee-em
