@@ -126,6 +126,18 @@
 
 <div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 
+<h2 id='license'> License </h2>
+<p> Distributed under the MIT License. See <a href='https://github.com/gamgee-em/Tick-List/blob/main/LICENSE.txt'> LICENSE.txt </a> for additional information. </p>
+
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
+
+<h2 id='contact'> Contact </h2>
+
+<p> Email: <a href='mailto: samuel.sweigart@gmail.com'> samuel.sweigart@gmail.com </a> </p>
+<p> Repository: <a href='https://www.github.com/gamgee-em/Tick-List'> Tick List </a> </p>
+
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
+
 <p align="right"> 
     (<a href="#top">back to top</a>) 
 </p>
