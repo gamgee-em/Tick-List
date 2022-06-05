@@ -116,13 +116,21 @@
 
 <h2 id='installation'> Installation </h2>
 
+- From the browser 
+    - Navigate to the <a href='https://www.github.com/gamgee-em/Tick-List'> Tick List </a> repository
+- From the command line or terminal
+    - Clone the repository
+    - From the root folder run the command 'npm i' or 'npm install'
+- To run the application
+    - Run the command 'npm run dev'
+
 <div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 
 <p align="right"> 
     (<a href="#top">back to top</a>) 
 </p>
 
-[github-shield]: https://img.shields.io/badge/Gamgee--Em-%23121011.svg?style=for-the-badge&logo=github&logoColor=black&colorB=e68718
+[github-shield]: https://img.shields.io/badge/Gamgee--Em-%23121011.svg?style=for-the-badge&logo=github&logoColor=black&colorB=bf7e32
 [github-url]: https://github.com/gamgee-em
 
 [javascript-shield]: https://img.shields.io/badge/javascript-Es6-black?style=for-the-badge&logo=javascript&logoColor=pink
@@ -131,16 +139,13 @@
 [contributors-shield]: https://img.shields.io/github/contributors/gamgee-em/Tick-List.svg?style=for-the-badge&color=yellow
 [contributors-url]: https://github.com/gamgee-em/tick-list/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/gamgee-em/Tick-List.svg?style=for-the-badge&color=244169
-[forks-url]: https://github.com/gamgee-em/Tick-List/network/members
-
 [stars-shield]: https://img.shields.io/github/stars/gamgee-em/Tick-List.svg?style=for-the-badge&color=ec9198&labelColor=black
 [stars-url]: https://github.com/gamgee-em/Tick-List/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/gamgee-em/Tick-List.svg?style=for-the-badge&color=4b1bb6
+[issues-shield]: https://img.shields.io/github/issues/gamgee-em/Tick-List.svg?style=for-the-badge&color=5431a2
 [issues-url]: https://github.com/gamgee-em/Tick-List/issues
 
-[license-shield]: https://img.shields.io/github/license/gamgee-em/Tick-List.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/gamgee-em/Tick-List.svg?style=for-the-badge&color=ad7dbd
 [license-url]: https://github.com/gamgee-em/Tick-List/blob/main/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&logoColor=black&colorB=blue
