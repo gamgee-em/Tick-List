@@ -19,6 +19,7 @@ import SignInForm from './components/SignInForm/SignInForm';
 import Profile from './pages/Profile/Profile';
 import Chart from 'react-google-charts';
 import TickList from './components/TickList/TickList';
+import Footer from './components/Footer/Footer';
 
 const errorLink = onError(({ graphqlErrors, networkError}) => {
     if (graphqlErrors) {
@@ -53,13 +54,14 @@ const App = () => {
     return (
         <ApolloProvider client={client}>
       
-          <Navbar />
-          <Routes>
-              <Route path='/' exact element={ <Home RegisterForm={ RegisterForm } SignInForm={ SignInForm }/> } />
-              <Route path='/me' exact element={ <Profile DataForm={ DataForm } Chart={ Chart } TickList={ TickList }/>} />
-          </Routes>
-        
-      </ApolloProvider>
+            <Navbar />
+            <Routes>
+                <Route path='/' exact element={ <Home RegisterForm={ RegisterForm } SignInForm={ SignInForm }/> } />
+                <Route path='/me' exact element={ <Profile DataForm={ DataForm } Chart={ Chart } TickList={ TickList }/>} />
+            </Routes>
+            <Footer />
+
+        </ApolloProvider>
     );
 };
 
