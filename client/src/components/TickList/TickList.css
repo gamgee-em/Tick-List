@@ -6,6 +6,9 @@
         0px 15px 25px rgba(0, 0, 0, 0.15), 
         0px 5px 10px rgba(0, 0, 0, 0.05);
     overflow: scroll;
+    background-color: white;
+    border-radius: var(--border-radius);
+
 }
 
 .tick-list-container::-webkit-scrollbar {

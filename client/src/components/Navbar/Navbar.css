@@ -2,5 +2,21 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2vw;
+    position: absolute;
+    width: 100%;
+    -webkit-box-shadow: 0 1px 6px rgba(220, 206, 206, 0.2);
+    -moz-box-shadow: 0 1px 6px rgba(220, 206, 206, 0.2);
+    box-shadow: 0 1px 6px rgba(220, 206, 206, 0.2);
+}
+
+nav a, #logo {
+    color: white;
+    text-decoration: none;
+}
+
+nav #logo {
+    padding-left: 2vw;
+}
+nav a {
+    padding-right: 2vw;
 }

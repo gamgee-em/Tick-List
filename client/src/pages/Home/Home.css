@@ -3,3 +3,8 @@ main {
     justify-content: center;
     align-content: center;
 }
+
+.home-container {
+    height: 100vh;
+    
+}

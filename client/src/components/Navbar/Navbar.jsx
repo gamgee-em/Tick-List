@@ -8,16 +8,17 @@ const Navbar = () => {
     const logout = () => Auth.logout();
 
     return ( 
-        <nav>
-            <h5> Tick List </h5>
-
-            { Auth.loggedIn() ? (
-                
-                <Link to={'/'} onClick={logout}> Logout </Link>
-                   
-            ) : 
-                <></>
-            }
+        <nav id='nav-container'>
+            <h5 id='logo'> Tick List </h5>
+            { Auth.loggedIn() && ( 
+                <Link
+                    id='logout'
+                    to={'/'} 
+                    onClick={logout}
+                > 
+                    Logout 
+                </Link>  
+            )}
         </nav>
      );
 };

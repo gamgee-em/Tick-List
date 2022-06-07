@@ -10,6 +10,9 @@
     height: 15vh;
     gap: 5px;
     padding: 2vh;
+    background-color: white;
+    border-radius: var(--border-radius);
+
 }
 
 .signin-form h4 {
@@ -42,7 +45,7 @@
     border: 3px solid rgb(215, 215, 215);
     outline: none;
     height: 2vh;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.081);
     transition: .5s;
 }

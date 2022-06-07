@@ -1,6 +1,8 @@
 .data-form {
     grid-column: 2 / 12;
     grid-row: 2 / 3;
+    background-color: white;
+    border-radius: var(--border-radius);
 }
 
 section h2 {
@@ -20,7 +22,6 @@ section h2 {
 .boulder-form .select {
     border: 3px solid rgb(215, 215, 215);
     outline: none;
-    border-radius: 4px;
 }
 
 .boulder-form input, button, input[type='file']::file-selector-button {
@@ -30,6 +31,8 @@ section h2 {
     border-radius: 4px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.081);
     transition: .5s;
+    border-radius: var(--border-radius);
+
 }
 
 input[type='file'] {
