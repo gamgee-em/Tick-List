@@ -14,15 +14,14 @@ const typeDefs = gql`
     }
 
     type User {
-        _id: ID!
-        username: String!
-        email: String!
-        password: String!
+        _id: ID
+        username: String
+        email: String
+       ## password: String!
         ticks: [Tick]
     }
 
     type Tick {
-        _id: ID!
         route_name: String
         difficulty: String
     }

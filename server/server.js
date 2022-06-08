@@ -1,7 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core');
-require('dotenv').config();
 const path  = require('path');
 
 const { typeDefs, resolvers } = require('./schema');
