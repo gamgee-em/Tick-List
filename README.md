@@ -15,9 +15,8 @@
 <h1 >Tick List</h1>
 
 <p>
-    Welcome to <strong>Tick List</strong>! Tick List is a full stack application that allows the user to keep record of thier Tick's. 
-    A Tick is rock climbing slang for when a climber completes a route from start to finish. When a climber 
-    achieves this it's common practice to add that route to your 'Tick List'
+    Welcome to <strong>Tick List</strong>! Tick List is a full stack mobile application that allows the user to keep record of thier Tick's. A Tick is rock climbing slang for when a climber completes a route from start to finish. When a climber 
+    achieves this it's common practice to add that route to your <strong>Tick List</strong>.
 </p>
     
 </div>
@@ -35,6 +34,7 @@
                 <li><a href="#installation">Installation</a></li>
             </ul>
         </li>
+        <li><a href="#screenshots">Screenshots</a></li>
         <li><a href="#usage">Usage</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#contributing">Contributing</a></li>
@@ -123,6 +123,14 @@
     - From the root folder run the command 'npm i' or 'npm install'
 - To run the application
     - Run the command 'npm run dev'
+
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
+
+<h2 id='screenshots'> ScreenShots </h2>
+
+<img src='./client/public/images/register_ss.png' alt='Register page screenshot'/>
+<img src='./client/public/images/signin_ss.png' alt='Sign in page screenshot' />
+<img src='./client/public/images/profile_ss.png' alt='Profile page screenshot' />
 
 <div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 

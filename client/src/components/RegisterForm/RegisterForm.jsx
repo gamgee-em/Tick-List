@@ -42,10 +42,11 @@ const RegisterForm = ({ handleForm }) => {
     };
 
     return (
-        <section>
+        <section className='register'>
+             <img src='/images/tick_list.png' alt='mountain icon' />
             <form className='register-form' onSubmit={addUser}>
-                <h4> Register </h4>
-                <button className='toggle-register' onClick={handleForm}> Sign In </button>
+                <h4> Register Here. </h4>
+                <p> Nows a good a time as any! </p>
                 <input 
                     className='username' 
                     name='username'
@@ -74,6 +75,7 @@ const RegisterForm = ({ handleForm }) => {
                     onChange={handleChange}
                 />
                 <button className='register-btn' type='submit'> Submit </button>
+                <p> Already registered? <span className='toggle-register' onClick={handleForm}> Sign in here </span></p>
             </form>
         </section>
      );

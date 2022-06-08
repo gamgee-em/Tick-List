@@ -1,14 +1,7 @@
 .tick-list-container {
-    grid-row: 3 / 7;
-    grid-column: 7 / 12;
-    padding: 0 0 1vh 0;
-    box-shadow: 
-        0px 15px 25px rgba(0, 0, 0, 0.15), 
-        0px 5px 10px rgba(0, 0, 0, 0.05);
     overflow: scroll;
-    background-color: white;
     border-radius: var(--border-radius);
-
+    margin: 0 2vh;
 }
 
 .tick-list-container::-webkit-scrollbar {
@@ -19,9 +12,9 @@
     position: sticky;
     top: 0;
     margin: 0;
-    padding: 1.5vh 0 1vh 0;
+    padding: 1.5vh 0;
     text-align: center;
-    background-color: white;
+    background-color: var(--background-color);
 }
 
 .tick-list-header, div .tick-list {
@@ -30,13 +23,14 @@
     grid-template-rows: auto;
     padding: 0 1vw;
 }
+.tick-list-header {
+    position: sticky;
+    background-color: var(--background-color);
+    top: 5.75vh;
+}
 
 .route-title, .route-name {
     justify-self: start;
-}
-
-.route-name {
-    padding-left: 7px;
 }
 
 .difficulty-title, .difficulty {
@@ -44,9 +38,9 @@
 }
 
 .tick-list .route-name {
-    padding: .5vh 0 0 7px;
+    padding: .5vh 0 0 3vw;
 }
 
 .tick-list .difficulty {
-    padding: .5vh 17px 0 0;
+    padding: .5vh 6vw 0 0;
 }

@@ -50,7 +50,7 @@ const Profile = ({ DataForm, Chart, TickList }) => {
     
     //* add difficulty in descending order HIGH -> LOW
     for (let tick in tickObj) {
-       chartData.unshift([`v${tick}`, tickObj[tick], 'orange', null]);
+       chartData.unshift([`v${tick}`, tickObj[tick], 'rgb(123, 104, 238)', null]);
     };
 
     //* add to first position of chartData array
@@ -79,7 +79,7 @@ const Profile = ({ DataForm, Chart, TickList }) => {
         },
         width: '100%',
         height: '100%',
-        bar: { groupWidth: "90%" },
+        bar: { groupWidth: "80%" },
         legend: { position: "none" }
     };
     

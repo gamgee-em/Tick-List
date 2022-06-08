@@ -1,8 +1,6 @@
 .data-form {
-    grid-column: 2 / 12;
-    grid-row: 2 / 3;
-    background-color: white;
-    border-radius: var(--border-radius);
+   padding: 4vh 2vh 2vh 2vh;
+   justify-content: center;
 }
 
 section h2 {
@@ -10,52 +8,30 @@ section h2 {
 }
 
 .boulder-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-    box-shadow: 
-        0px 15px 25px rgba(0, 0, 0, 0.15), 
-        0px 5px 10px rgba(0, 0, 0, 0.05);
-    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 }
 
 .boulder-form .select {
-    border: 3px solid rgb(215, 215, 215);
+    border: none;
     outline: none;
 }
 
-.boulder-form input, button, input[type='file']::file-selector-button {
-    border: 3px solid rgb(215, 215, 215);
+.boulder-form .difficulty {
+    margin: 1vh 0;
+}
+
+.boulder-form input, button {
+    border: none;
     outline: none;
-    height: 2vh;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.081);
-    transition: .5s;
+    height: 6vh;
     border-radius: var(--border-radius);
 
 }
 
-input[type='file'] {
-    border: none;
-    box-shadow: none;
-}
-
-.boulder-form input:focus {
-    border: 3px solid rgb(161, 159, 159);
-    box-shadow: 0 1px 3px rgb(161, 159, 159);
-}
-
-input[type='file']:focus {
-    border: none;
-    box-shadow: none;
-}
-
-button, input[type='file']::file-selector-button {
-    justify-self: start;
-    cursor: pointer;
-    
-}
-button:hover, input[type='file']::file-selector-button:hover {
-    background-color: rgb(190, 190, 190);
-    transition: .5s;
+.boulder-form button {
+    color: white;
+    background-color: var(--btn-background);
 }

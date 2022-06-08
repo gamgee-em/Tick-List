@@ -53,6 +53,7 @@ const DataForm = ({ user }) => {
                     required
                 />
                 <input  
+                    className='difficulty'
                     name='difficulty'
                     type='number'
                     placeholder='Difficulty'

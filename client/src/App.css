@@ -2,9 +2,19 @@
 
 :root {
     --border-radius: 8px;
-
+    --background-color: rgb(229, 225, 225);
+    --btn-background: rgb(123, 104, 238);
 }
 
 body {
-    background-color: rgb(26, 26, 54);
+    background-color: var(--background-color);
+  /*   font-family: 'Kdam Thmor Pro', sans-serif; */
+}
+
+* input, input::placeholder {
+    text-indent: 10px;
+}
+
+p {
+    margin: 0;
 }

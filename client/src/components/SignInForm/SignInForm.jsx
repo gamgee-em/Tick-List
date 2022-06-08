@@ -12,7 +12,7 @@ const SignInForm = ({ handleForm }) => {
         password: ''
     });
 
-    const [ signInUser, { error } ] = useMutation(LOGIN_USER);
+    const [ signInUser/* , { error } */ ] = useMutation(LOGIN_USER);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -40,10 +40,12 @@ const SignInForm = ({ handleForm }) => {
     };
 
     return (
-        <section>
+        <section className='signin'>
+            <img src='/images/tick_list.png' alt='mountain icon' />
             <form className='signin-form' onSubmit={signIn}>
-                <h4> Sign In </h4>
-                <button className='toggle-signin' onClick={handleForm}> Register </button>
+                <h4> Welcome Back! </h4>
+                <p> Ready to add some ticks?</p>
+                {/* <button className='toggle-signin' onClick={handleForm}> Register </button> */}
                 <input 
                     className='username' 
                     name='username'
@@ -63,6 +65,7 @@ const SignInForm = ({ handleForm }) => {
                     onChange={handleChange}
                 />
                 <button className='signin-btn' type='submit'> Submit </button>
+                <p> First time? <span className='toggle-signin' onClick={handleForm} > Register here </span></p>
             </form>
         </section>
         
