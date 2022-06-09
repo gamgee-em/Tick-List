@@ -13,20 +13,21 @@ const RegisterForm = ({ handleForm }) => {
         password: ''
     });
 
-    const [ createUser, /* { error } */ ] = useMutation(ADD_USER);
+    const [ addUser, /* { error } */ ] = useMutation(ADD_USER);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         return setUserState({ ...userState, [name]: value });
     };
 
-    const addUser = async (e) => {
+    const createUser = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await createUser({
+            const { data } = await addUser({
                 variables: { ...userState },
             });
             
+            console.log('CreateUser Data: ', data);
             Auth.login(data.addUser.token)
 
         } catch (err) {
@@ -44,7 +45,7 @@ const RegisterForm = ({ handleForm }) => {
     return (
         <section className='register'>
              <img src='/images/tick_list.png' alt='mountain icon' />
-            <form className='register-form' onSubmit={addUser}>
+            <form className='register-form' onSubmit={createUser}>
                 <h4> Register Here. </h4>
                 <p> Nows a good a time as any! </p>
                 <input 

@@ -33,8 +33,11 @@ const resolvers = {
             return boulders;
         },
         me: async (parent, args, context ) => {
-            console.log('Context User: ', context.user)
+            
             const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+            
+            console.log('Context User: ', userData);
+
             if (context.user) {
                 return userData;
             };
@@ -43,14 +46,17 @@ const resolvers = {
         
     },
     Mutation: {
-        addUser: async (parent, args/* { username, email, password } */) => {
-            const user = await User.create(args/* { username, email, password } */);
+        addUser: async (parent, args) => {
+            const user = await User.create( args );
 
             const token = signToken(user);
 
+            console.log('AddUser Token: ', token);
+            console.log('AddUser: ', user);
+
             return { token, user };
         },
-        loginUser: async (parent, { username, password }) => {
+        signInUser: async (parent, { username, password }) => {
             const user = await User.findOne({ username });
 
             if (!user) throw new AuthenticationError('No user found. Check for accuracy and try again.');
@@ -58,9 +64,10 @@ const resolvers = {
             const correctPassword = await user.isCorrectPassword(password);
 
             if (!correctPassword) throw new AuthenticationError('Incorrect password. Check for accuracy and try again.');
-            console.log(user);
-            const token = signToken(user);
             
+            const token = signToken(user);
+            console.log('LoginUser Token: ', token);
+            console.log('LoginUser User: ', user);
             return { token, user };
         },
         updateUser: async (parent, { _id, username, email, password }) => {
@@ -100,8 +107,9 @@ const resolvers = {
             return boulder;
         },
         addTick: async (parent, { route_name, difficulty }, context) => {
+            console.log( context.user);
             if(context.user) {
-                const tick = await User.findOneAndUpdate(
+                const tick = await User.findByIdAndUpdate(
                     {
                         _id: context.user._id,
                     }, 

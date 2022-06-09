@@ -1,7 +1,7 @@
 import './SignInForm.css';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../../utils/mutations';
+import { SIGNIN_USER } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
@@ -12,7 +12,7 @@ const SignInForm = ({ handleForm }) => {
         password: ''
     });
 
-    const [ signInUser/* , { error } */ ] = useMutation(LOGIN_USER);
+    const [ signInUser/* , { error } */ ] = useMutation(SIGNIN_USER);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -25,8 +25,10 @@ const SignInForm = ({ handleForm }) => {
             const { data } = await signInUser({
                 variables: { ...userState },
             });
-            
-            Auth.login(data.loginUser.token)
+
+            console.log('SignIn Data: ', data)
+
+            Auth.login(data.signInUser.token)
 
         } catch (err) {
             console.error(err);

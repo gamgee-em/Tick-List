@@ -3,12 +3,6 @@ import './TickList.css';
 const TickList = ({ user }) => {
 
     return (
-
-        !user.ticks.length ? (
-            <section className='tick-list-container'>
-                <h3> No Ticks Yet</h3>
-            </section>
-            ) : ( 
             <section className='tick-list-container'>
                 <h3> Ticks </h3>
                 <div className='tick-list-header'>
@@ -26,7 +20,7 @@ const TickList = ({ user }) => {
                 })}
             </section>
         )
-    );
+    /* ); */
 };
  
 export default TickList;

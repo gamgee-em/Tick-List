@@ -16,9 +16,9 @@ export const ADD_BOULDER = gql`
     }
 `;
 
-export const LOGIN_USER = gql`
-    mutation loginUser($username: String!, $password: String!) {
-        loginUser(username: $username, password: $password) {
+export const SIGNIN_USER = gql`
+    mutation signInUser($username: String!, $password: String!) {
+        signInUser(username: $username, password: $password) {
             token
             user {
                 _id
@@ -44,8 +44,11 @@ export const ADD_TICK = gql`
     mutation addTick($route_name: String!, $difficulty: String!) {
         addTick(route_name: $route_name, difficulty: $difficulty) {
             _id
-            route_name
-            difficulty
+            ticks {
+                route_name
+                difficulty
+            }
+            
         }
     }
 `;

@@ -15,12 +15,14 @@ const Profile = ({ DataForm, Chart, TickList }) => {
     //* pass as prop to DataFrom component
     const user = data?.me || data?.user || {};
     
+    console.log('Data Profile: ',data);
+
     if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) return <Navigate to='me' />;
 
     if (loading) {
         return <div> Loading... </div>
     };
-
+    
     if (!user?._id) {
         return (
             <h2>
@@ -84,8 +86,18 @@ const Profile = ({ DataForm, Chart, TickList }) => {
     };
     
     return ( 
+
+        !user.ticks.length ? (
         <main className='profile-container'>
+            <section className='tick-list-container'>
             <DataForm className='data-form' user={user} />
+                <h3> No Ticks Yet</h3>
+            </section>
+        </main> 
+        ) : (
+            <main className='profile-container'>
+            <DataForm className='data-form' user={user} />
+            
             <div className='chart'>
                 <Chart 
                     chartType="BarChart"
@@ -96,7 +108,10 @@ const Profile = ({ DataForm, Chart, TickList }) => {
             </div>
             
             <TickList user={user} />
+            
         </main>
+        )
+        
      );
 };
  

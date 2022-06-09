@@ -23,7 +23,6 @@ export const QUERY_USERS = gql`
             token
             username
             email
-            password
             ticks {
                 route_name
                 difficulty

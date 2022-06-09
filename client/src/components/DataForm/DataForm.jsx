@@ -19,7 +19,7 @@ const DataForm = ({ user }) => {
     };
 
     const addTick = async (e) => {
-        //e.preventDefault();
+        e.preventDefault();
         try {
             await createTick({
                 variables: { ...tickState },

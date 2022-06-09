@@ -2,7 +2,7 @@ import './Home.css';
 import { useState } from 'react';
 
 const Home = ({ RegisterForm, SignInForm }) => {
-    const [ formState, setFormState ] = useState(false);
+    const [ formState, setFormState ] = useState(true);
 
     const handleForm = (e) => {
         e.preventDefault();

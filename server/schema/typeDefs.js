@@ -14,14 +14,15 @@ const typeDefs = gql`
     }
 
     type User {
-        _id: ID
-        username: String
-        email: String
+        _id: ID!
+        username: String!
+        email: String!
         password: String!
         ticks: [Tick]
     }
 
     type Tick {
+        _id: ID!
         route_name: String
         difficulty: String
     }
@@ -67,11 +68,11 @@ const typeDefs = gql`
         removeBoulder(_id: ID!): Boulder
 
         addUser(username: String!, email: String!, password: String!): Auth
-        loginUser(username: String!, password: String!): Auth
+        signInUser(username: String!, password: String!): Auth
         updateUser(_id: ID!, username: String, email: String, password: String): User
         deleteUser(_id: ID!): User
 
-        addTick(route_name: String!, difficulty: String!): Tick
+        addTick(_id: ID, route_name: String!, difficulty: String!): User
     }   
 `;
 
