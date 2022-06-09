@@ -33,17 +33,18 @@ const resolvers = {
             return boulders;
         },
         me: async (parent, args, context ) => {
-            console.log(context.user)
+            console.log('Context User: ', context.user)
+            const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
             if (context.user) {
-                return User.findOne({ _id: context.user._id });
+                return userData;
             };
             throw new AuthenticationError('You need to be logged in.');
         },
         
     },
     Mutation: {
-        addUser: async (parent, { username, email, password }) => {
-            const user = await User.create({ username, email, password });
+        addUser: async (parent, args/* { username, email, password } */) => {
+            const user = await User.create(args/* { username, email, password } */);
 
             const token = signToken(user);
 
@@ -54,10 +55,10 @@ const resolvers = {
 
             if (!user) throw new AuthenticationError('No user found. Check for accuracy and try again.');
 
-            const correctPassword = user.isCorrectPassword(password);
+            const correctPassword = await user.isCorrectPassword(password);
 
             if (!correctPassword) throw new AuthenticationError('Incorrect password. Check for accuracy and try again.');
-            
+            console.log(user);
             const token = signToken(user);
             
             return { token, user };
