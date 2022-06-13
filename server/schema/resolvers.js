@@ -107,7 +107,7 @@ const resolvers = {
             return boulder;
         },
         addTick: async (parent, { route_name, difficulty }, context) => {
-            console.log( context.user);
+            console.log('Context User: ',context.user);
             if(context.user) {
                 const tick = await User.findByIdAndUpdate(
                     {

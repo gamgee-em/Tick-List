@@ -1,8 +1,8 @@
-require('dotenv').config();
+require('dotenv').config(`${process.env.JWT_SECRET}`);
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core');
-const path  = require('path');
+const path = require('path');
 
 const { typeDefs, resolvers } = require('./schema');
 const { authMiddleware } = require('./utils/auth');
@@ -34,12 +34,12 @@ const startServer = async () => {
         res.sendFile(path.join(__dirname, '../client/build/index.html'));
     });
 
-    db.once('open', () => {
-        app.listen(PORT, () => {
-            console.log(`API server running on port ${PORT}!`);
-            console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-        });
+    /* db.once('open', () => { */
+    app.listen(PORT, () => {
+        console.log(`API server running on port ${PORT}!`);
+        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     });
+    /* }); */
 };
 
 startServer();

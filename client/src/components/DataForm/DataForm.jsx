@@ -4,6 +4,7 @@ import { useMutation } from '@apollo/client';
 import {/*  ADD_BOULDER, */ ADD_TICK } from '../../utils/mutations';
 //const UsaStates = require('usa-states').UsaStates;
 
+import Auth from '../../utils/auth';
 const DataForm = ({ user }) => {
 
     const [ tickState, setTickState ] = useState({
@@ -11,23 +12,27 @@ const DataForm = ({ user }) => {
         difficulty: '',
     });
    
-    const [ createTick /* , { error }  */] = useMutation(ADD_TICK);
+    const [ addTick  /* , { error } */ ] = useMutation(ADD_TICK);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         return setTickState({ ...tickState, [name]: value });
     };
 
-    const addTick = async (e) => {
+    const createTick = async (e) => {
         e.preventDefault();
         try {
-            await createTick({
-                variables: { ...tickState },
+            const {data} = await addTick({
+                 variables: {
+                    ...tickState,
+                    user: Auth.getProfile().data.username
+                }
             });
-            console.log(createTick)
+            console.log('CreateTick: ', {data})
         } catch(error) {
             console.error(error);
         }
+        
 
         //! reset form
         setTickState({
@@ -43,7 +48,7 @@ const DataForm = ({ user }) => {
     return ( 
         <section className="data-form">
               <h2> {capFirstChar(user.username)} Boulder Information </h2>
-            <form className='boulder-form' onSubmit={addTick}>
+            <form className='boulder-form' onSubmit={createTick}>
                 <input 
                     name='route_name'
                     type='text'

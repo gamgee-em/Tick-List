@@ -9,7 +9,7 @@ import {
 import { onError } from '@apollo/client/link/error';
 import { setContext } from '@apollo/client/link/context'
 
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
@@ -41,8 +41,8 @@ const authLink = setContext((_, { headers }) => {
         headers: { 
           ...headers,
           authorization: token ? `Bearer ${token}` : '',
-        }
-    }
+        },
+    };
 });
 
 const client = new ApolloClient({
@@ -53,14 +53,14 @@ const client = new ApolloClient({
 const App = () => {
     return (
         <ApolloProvider client={client}>
-      
-            <Navbar />
-            <Routes>
-                <Route path='/' exact element={ <Home RegisterForm={ RegisterForm } SignInForm={ SignInForm }/> } />
-                <Route path='/me' exact element={ <Profile DataForm={ DataForm } Chart={ Chart } TickList={ TickList }/>} />
-            </Routes>
-            <Footer />
-
+            <Router>
+                <Navbar />
+                <Routes>
+                    <Route path='/' exact element={ <Home RegisterForm={ RegisterForm } SignInForm={ SignInForm }/> } />
+                    <Route path='/me' exact element={ <Profile DataForm={ DataForm } Chart={ Chart } TickList={ TickList }/>} />
+                </Routes>
+                <Footer />
+            </Router>
         </ApolloProvider>
     );
 };

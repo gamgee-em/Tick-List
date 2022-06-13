@@ -15,7 +15,7 @@ const Profile = ({ DataForm, Chart, TickList }) => {
     //* pass as prop to DataFrom component
     const user = data?.me || data?.user || {};
     
-    console.log('Data Profile: ',data);
+    console.log('Profile data: ',data);
 
     if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) return <Navigate to='me' />;
 
@@ -111,7 +111,6 @@ const Profile = ({ DataForm, Chart, TickList }) => {
             
         </main>
         )
-        
      );
 };
  
