@@ -96,6 +96,7 @@ const Profile = ({ DataForm, Chart, TickList }) => {
             </main> 
         ) : (
             <main className='profile-container'>
+
                 <DataForm className='data-form' user={user} />
                 
                 <div className='chart'>
