@@ -33,7 +33,6 @@ const SignInForm = ({ handleForm }) => {
         } catch (err) {
             console.error(err);
         }
-        
 
         setUserState({
             username: '',
@@ -72,6 +71,6 @@ const SignInForm = ({ handleForm }) => {
         </section>
         
      );
-}
+};
  
 export default SignInForm;

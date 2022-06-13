@@ -88,28 +88,28 @@ const Profile = ({ DataForm, Chart, TickList }) => {
     return ( 
 
         !user.ticks.length ? (
-        <main className='profile-container'>
-            <section className='tick-list-container'>
-            <DataForm className='data-form' user={user} />
-                <h3> No Ticks Yet</h3>
-            </section>
-        </main> 
+            <main className='profile-container'>
+                <section className='tick-list-container'>
+                <DataForm className='data-form' user={user} />
+                    <h3> No Ticks Yet</h3>
+                </section>
+            </main> 
         ) : (
             <main className='profile-container'>
-            <DataForm className='data-form' user={user} />
-            
-            <div className='chart'>
-                <Chart 
-                    chartType="BarChart"
-                    data={chartData} 
-                    options={options}
-                    user={user}
-                />
-            </div>
-            
-            <TickList user={user} />
-            
-        </main>
+                <DataForm className='data-form' user={user} />
+                
+                <div className='chart'>
+                    <Chart 
+                        chartType="BarChart"
+                        data={chartData} 
+                        options={options}
+                        user={user}
+                    />
+                </div>
+                
+                <TickList user={user} />
+                
+            </main>
         )
      );
 };
