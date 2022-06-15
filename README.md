@@ -25,28 +25,27 @@
     <summary><h2>Table of Contents</h2></summary>
     <ol>
         <li>
-            <a href='#about'>About The Project</a>
-        </li>
-        <li>
             <a href="#getting-started">Getting Started</a>
             <ul>
+                <li><a href='#about'>About The Project</a></li>
                 <li><a href='#dependencies'>Dependencies</a></li>
                 <li><a href="#installation">Installation</a></li>
             </ul>
         </li>
+        <li><a href="#roadmap"> Roadmap </a></li>
         <li><a href="#screenshots">Screenshots</a></li>
-        <li><a href="#usage">Usage</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#contributing">Contributing</a></li>
-        <li><a href="#license">License</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#acknowledgments">Acknowledgments</a></li>
+        <li><a href="#contributing"> Contributing </a></li>
+        <li><a href="#license"> License </a></li>
+        <li><a href="#deployment"> Deployment </a></li>
+        <li><a href="#contact"> Contact </a></li>
     </ol>
 </details>
-
-#
+<br>
 
 <img width='100%' src="./client/public/images/buttermilks_bouldering.jpeg" alt='Climber in Bishop, CA'/>
+
+<h1 id='getting-started' align='center'> Getting Started </h1>
+
 
 <h2 id='about'> About The Project </h2>
 
@@ -126,6 +125,16 @@
 
 <div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 
+<h2 id='Roadmap'> Roadmap </h2>
+
+- Mobile MVP (Minimum Viable Product) ✔️
+- Desktop MVP 🔜 
+- Delete Ticks 🔜 
+- Scale Ticks to accept not only boulders but routes as well 🔜 
+- Climber Field Guide Section 🔜
+
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
+
 <h2 id='screenshots'> ScreenShots </h2>
 
 <img src='./client/public/images/register_ss.png' alt='Register page screenshot'/>
@@ -134,8 +143,24 @@
 
 <div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 
+<h2 id='contributing'> Contributing </h2>
+
+1. Fork the repo on GitHub
+2. Clone the project to your own machine
+3. Commit changes to your own branch
+4. Push your work back up to your fork
+5. Submit a Pull request of your changes for review
+
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
+
 <h2 id='license'> License </h2>
 <p> Distributed under the MIT License. See <a href='https://github.com/gamgee-em/Tick-List/blob/main/LICENSE.txt'> LICENSE.txt </a> for additional information. </p>
+
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
+
+<h2 id='deployment'> Deployment </h2>
+
+<span> Live Site: <a href='https://ge-tick-list.herokuapp.com/'> Tick List </a></span>
 
 <div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 
