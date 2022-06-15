@@ -1,4 +1,4 @@
-require('dotenv').config(`${process.env.JWT_SECRET}`);
+require('dotenv').config();
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core');
