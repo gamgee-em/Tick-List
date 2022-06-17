@@ -191,7 +191,7 @@
 [issues-url]: https://github.com/gamgee-em/Tick-List/issues
 
 [license-shield]: https://img.shields.io/github/license/gamgee-em/Tick-List.svg?style=for-the-badge&color=ad7dbd
-[license-url]: https://github.com/gamgee-em/Tick-List/blob/main/LICENSE
+[license-url]: https://github.com/gamgee-em/Tick-List/blob/main/LICENSE.txt
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&logoColor=black&colorB=blue
 [linkedin-url]: https://linkedin.com/in/gamgee-em
