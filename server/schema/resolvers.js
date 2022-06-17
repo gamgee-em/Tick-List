@@ -121,6 +121,24 @@ const resolvers = {
             };
             throw new AuthenticationError('Please login to add tick!');
         },
+        deleteTick: async (parent, { _id }, context) => {
+            console.log('DeleteTick Args: ', _id);
+            console.log('Context User deleteTick:', context.user._id);
+            if(context.user) {
+                const tick = await User.findByIdAndUpdate(
+                    {
+                        _id: context.user._id,
+                    },
+                    { 
+                        $pull: { ticks: { _id: _id } }
+                    },
+                    { new: true },
+                );
+                console.log('Tick: ',tick);
+                return tick;
+            };
+            throw new AuthenticationError('Cannot delete Tick!');
+        },
     },
 };
 

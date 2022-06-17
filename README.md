@@ -16,7 +16,7 @@
 
 <p>
     Welcome to <strong>Tick List</strong>! Tick List is a full stack mobile application that allows the user to keep record of thier Tick's. A Tick is rock climbing slang for when a climber completes a route from start to finish. When a climber 
-    achieves this it's common practice to add that route to your <strong>Tick List</strong>.
+    achieves this, it's common practice to add that route to your <strong>Tick List</strong>.
 </p>
     
 </div>
@@ -50,7 +50,7 @@
 <h2 id='about'> About The Project </h2>
 
 <p> 
-    I've found myself using other <strong>"Tick List"</strong> style applications that only allow you to use routes available from their database.          However, as an adventrous climber, many of the routes I've persued have been off the beaten path. This leads to the data pertaining to my climbing      performance skewed. So, I chose to build an application, albeit less convenient that gives the user control over their performance data. 
+    I've found myself using other <strong>"Tick List"</strong> style applications that only allow you to use routes available from their database. However, as an adventrous climber, many of the routes I've persued have been off the beaten path. This leads to the data pertaining to my climbing performance skewed. So I chose to build an application, albeit less convenient, that gives the user control over their performance data. 
 </p>
 
 <div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
@@ -172,7 +172,7 @@
 <div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 
 <p align="right"> 
-    (<a href="#top">back to top</a>) 
+    (<a href="#top"> Back to Top</a>) 
 </p>
 
 [github-shield]: https://img.shields.io/badge/Gamgee--Em-%23121011.svg?style=for-the-badge&logo=github&logoColor=black&colorB=bf7e32

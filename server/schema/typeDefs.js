@@ -73,6 +73,7 @@ const typeDefs = gql`
         deleteUser(_id: ID!): User
 
         addTick(_id: ID, route_name: String!, difficulty: String!): User
+        deleteTick(_id: ID!): User
     }   
 `;
 
