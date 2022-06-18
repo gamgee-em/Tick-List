@@ -16,7 +16,7 @@ const SignInForm = ({ handleForm }) => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        return setUserState({ ...userState, [name]: value });
+        return setUserState({ ...userState, [name]: value});
     };
 
     const signIn = async (e) => {
@@ -26,13 +26,13 @@ const SignInForm = ({ handleForm }) => {
                 variables: { ...userState },
             });
 
-            console.log('SignIn Data: ', data)
+            console.log('SignIn Data: ', data);
 
-            Auth.login(data.signInUser.token)
+            Auth.login(data.signInUser.token);
 
         } catch (err) {
             console.error(err);
-        }
+        };
 
         setUserState({
             username: '',
@@ -46,7 +46,6 @@ const SignInForm = ({ handleForm }) => {
             <form className='signin-form' onSubmit={signIn}>
                 <h4> Welcome Back! </h4>
                 <p> Ready to add some ticks?</p>
-                {/* <button className='toggle-signin' onClick={handleForm}> Register </button> */}
                 <input 
                     className='username' 
                     name='username'

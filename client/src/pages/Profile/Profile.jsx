@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 //import { Chart } from '../../components/Chart/Chart';
-
+import { Link } from 'react-router-dom';
 const Profile = ({ DataForm, Chart, TickList }) => {
     const { _id: userParam } = useParams();
 
@@ -25,10 +25,13 @@ const Profile = ({ DataForm, Chart, TickList }) => {
     
     if (!user?._id) {
         return (
-            <h2>
-                You need to be logged in to see this. Use the navigation links above to
-                sign up or log in!
-            </h2>
+            <div className='err-message'>
+                <h2>
+                    You need to be logged in to see this. Please sign in to continue.
+                </h2>
+                <Link to={'/'}> Sign in </Link>
+            </div>
+            
         );
     };
 

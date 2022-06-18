@@ -24,3 +24,14 @@ svg > rect {
 #reactgooglegraph-1 > div > div:nth-child(1) > div > svg > g:nth-child(3) > rect {
     margin-left: 20vh;
 }
+
+.err-message {
+    position: absolute;
+    text-align: center;
+    top: 30%;
+}
+
+.err-message a {
+    color: rgb(0, 8, 255);
+    text-decoration: none;
+}

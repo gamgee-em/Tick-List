@@ -7,13 +7,15 @@ const userSchema = new Schema(
             type: String,
             required: 'Username address is required!',
             unique: true,
-            trim: true
+            lowercase: true,
+            trim: true,
         },
         email: {
             type: String,
             required: 'Email address is required!',
             unique: true,
-            trim: true
+            lowercase: true,
+            trim: true,
         },
         password: {
             type: String,
@@ -25,6 +27,7 @@ const userSchema = new Schema(
                 route_name: {
                     type: String,
                     required: false,
+                    lowercase: true,
                     trim: true,
                 },
                 difficulty: {

@@ -32,7 +32,7 @@ const RegisterForm = ({ handleForm }) => {
 
         } catch (err) {
             console.error(err);
-        }
+        };
         
 
         setUserState({
