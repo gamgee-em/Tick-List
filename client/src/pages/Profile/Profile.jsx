@@ -27,11 +27,11 @@ const Profile = ({ DataForm, Chart, TickList }) => {
         return (
             <div className='err-message'>
                 <h2>
-                    You need to be logged in to see this. Please sign in to continue.
+                    You need to be logged in to see this. 
+                    Please sign in to continue.
                 </h2>
                 <Link to={'/'}> Sign in </Link>
             </div>
-            
         );
     };
 

@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+
     type Boulder {
         _id: ID!
         state: String
@@ -33,12 +34,15 @@ const typeDefs = gql`
     }
 
     type Query {
+        
+        # BOULDERS
         getAllBoulders: [Boulder]
         getSingleBoulder(_id: ID!): Boulder
         getBouldersByGrade(grade: String!): [Boulder]
         getBouldersByArea(area: String!): [Boulder]
         getBouldersBySubArea(sub_area: String!): [Boulder]
 
+        # USERS
         getAllUsers: [User]
         getSingleUser(_id: ID): User
         me: User
@@ -46,6 +50,8 @@ const typeDefs = gql`
     }
 
     type Mutation {
+
+        # BOULDERS
         addBoulder(
             state: String, 
             destination: String, 
@@ -67,11 +73,13 @@ const typeDefs = gql`
         ): Boulder
         removeBoulder(_id: ID!): Boulder
 
+        # USERS
         addUser(username: String!, email: String!, password: String!): Auth
         signInUser(username: String!, password: String!): Auth
         updateUser(_id: ID!, username: String, email: String, password: String): User
         deleteUser(_id: ID!): User
 
+        # TICKS
         addTick(_id: ID, route_name: String!, difficulty: String!): User
         deleteTick(_id: ID!): User
     }   

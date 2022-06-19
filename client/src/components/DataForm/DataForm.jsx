@@ -1,7 +1,7 @@
 import './DataForm.css';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import {/*  ADD_BOULDER, */ ADD_TICK } from '../../utils/mutations';
+import { ADD_TICK } from '../../utils/mutations';
 //const UsaStates = require('usa-states').UsaStates;
 
 import Auth from '../../utils/auth';

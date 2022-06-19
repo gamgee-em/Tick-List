@@ -52,3 +52,18 @@ export const ADD_TICK = gql`
         }
     }
 `;
+
+export const DELETE_TICK = gql`
+    mutation deleteTick($_id: ID!) {
+        deleteTick(_id: $_id) {
+            _id
+            username
+            email
+            ticks {
+            _id
+            route_name
+            difficulty
+            }
+        }
+    }
+`;
