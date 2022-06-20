@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_TICK } from '../../utils/mutations';
 //const UsaStates = require('usa-states').UsaStates;
+import { capFirstChar } from '../../utils/helpers';
 
 import Auth from '../../utils/auth';
 const DataForm = ({ user }) => {
@@ -33,7 +34,6 @@ const DataForm = ({ user }) => {
             console.error(error);
         }
         
-
         //! reset form
         setTickState({
             route_name: '',
@@ -41,13 +41,9 @@ const DataForm = ({ user }) => {
         });
     };
 
-    const capFirstChar = (str) => {
-        return `${str[0].toUpperCase()}${str.slice(1, str.length)}'s`
-    };
-
     return ( 
         <section className="data-form">
-              <h2> {capFirstChar(user.username)} Boulder Information </h2>
+            <h2> {capFirstChar(user.username)}'s Boulder Information </h2>
             <form className='boulder-form' onSubmit={createTick}>
                 <input 
                     name='route_name'
@@ -68,7 +64,7 @@ const DataForm = ({ user }) => {
                 <button type='submit'> Submit </button>
             </form>
         </section>
-     );
+    );
 };
 
 //! move to own component to use in 'the climbers fieldguide' page
