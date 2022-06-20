@@ -1,24 +1,24 @@
 import { useMutation } from '@apollo/client';
+import Auth from '../../utils/auth';
 import { DELETE_TICK } from '../../utils/mutations';
 import './TickList.css';
 
 const TickList = ({ user }) => {
 
-    const [ deleteTick, { error } ] = useMutation(DELETE_TICK);
+    const [ deleteTick/* , { error }  */] = useMutation(DELETE_TICK);
 
-    console.log('Delete Tick: ',deleteTick);
+    const removeTick = async (_id) => {
 
-    //! STARTING POINT
-    //* pass in user id & tick id onCLick
-    const removeTick = async (e) => {
-        e.preventDefault();
+        const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+        if (!token) return false;
 
         try {
             const { data } = await deleteTick({
-                variables: {
-                    
-                }
-            })
+                variables: { _id },
+            });
+            console.log('Data: ',data);
+           
         } catch(error) {
             console.error(error);
         }
@@ -27,9 +27,9 @@ const TickList = ({ user }) => {
 
     return (
             <section className='tick-list-container'>
-                <h3> Ticks </h3>
+                <h3>Ticks</h3>
                 <div className='tick-list-header'>
-                    <th className='route-title'> Route Name </th>
+                    <th className='route-title'> Route </th>
                     <th className='difficulty-title'> Grade </th>
                 </div>
                 
@@ -37,6 +37,7 @@ const TickList = ({ user }) => {
                     return (
                         <div className='tick-list' key={tick._id}> 
                             <div className='route-name'>{tick.route_name} </div>
+                            <button className='remove-tick' onClick={() => removeTick(tick._id)}>Delete</button>
                             <div className='difficulty'>v{tick.difficulty} </div>
                         </div>
                     )

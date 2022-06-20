@@ -60,9 +60,9 @@ export const DELETE_TICK = gql`
             username
             email
             ticks {
-            _id
-            route_name
-            difficulty
+                _id
+                route_name
+                difficulty
             }
         }
     }

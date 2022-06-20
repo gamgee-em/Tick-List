@@ -53,6 +53,7 @@ export const QUERY_ME = gql`
             username
             email
             ticks {
+                _id
                 route_name
                 difficulty
             }

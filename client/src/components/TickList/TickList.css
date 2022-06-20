@@ -1,7 +1,6 @@
 .tick-list-container {
     overflow: scroll;
     border-radius: var(--border-radius);
-    margin: 0 2vh;
 }
 
 .tick-list-container::-webkit-scrollbar {
@@ -19,28 +18,36 @@
 
 .tick-list-header, div .tick-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    padding: 0 1vw;
 }
+
 .tick-list-header {
     position: sticky;
     background-color: var(--background-color);
     top: 5.75vh;
 }
 
-.route-title, .route-name {
-    justify-self: start;
-}
-
-.difficulty-title, .difficulty {
-    justify-self: end;
+.difficulty-title {
+    grid-column: 3 / 4;
 }
 
 .tick-list .route-name {
-    padding: .5vh 0 0 3vw;
+    justify-self: center;
+    align-self: center;
 }
 
 .tick-list .difficulty {
-    padding: .5vh 6vw 0 0;
+   justify-self: center;
+   align-self: center;
+}
+
+.remove-tick {
+    justify-self: center;
+    align-self: center;
+    height: 2.5vh;
+    margin: .15vh 0;
+    letter-spacing: .1vw;
+    background-color: var(--btn-background);
+    color: white;
 }
