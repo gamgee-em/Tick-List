@@ -139,6 +139,26 @@ const resolvers = {
             };
             throw new AuthenticationError('Cannot delete Tick!');
         },
+        updateTick: async (parent, { _id, route_name, difficulty }, context) => {
+            if (context.user) {
+                const tick = await User.findOneAndUpdate(
+                    {
+                        _id: context.user._id,
+                        "ticks._id": _id
+                    },
+                    {
+                        $set: {
+                            "ticks.$.route_name": route_name,
+                            "ticks.$.difficulty": difficulty,
+                        }
+                    },
+                    { new: true },
+                );
+                console.log('Tick Update: ', tick);
+                return tick;
+            };
+            throw new AuthenticationError('Cannot update Tick!');
+        },
     },
 };
 

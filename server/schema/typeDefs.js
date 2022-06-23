@@ -82,6 +82,7 @@ const typeDefs = gql`
         # TICKS
         addTick(_id: ID, route_name: String!, difficulty: String!): User
         deleteTick(_id: ID!): User
+        updateTick(_id: ID!, route_name: String, difficulty: String): User
     }   
 `;
 
