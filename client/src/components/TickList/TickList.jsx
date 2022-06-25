@@ -37,6 +37,7 @@ const TickList = ({ user }) => {
                 return (
                     <div className='tick-list' key={tick._id}> 
                         <div className='route-name'>{capFirstChar(tick.route_name)} </div>
+                        <button className='update-tick' /* onClick={() => removeTick(tick._id)} */> Update </button>
                         <button className='remove-tick' onClick={() => removeTick(tick._id)}> Delete </button>
                         <div className='difficulty'>v{tick.difficulty} </div>
                     </div>

@@ -18,7 +18,7 @@
 
 .tick-list-header, div .tick-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
 }
 
@@ -26,10 +26,11 @@
     position: sticky;
     background-color: var(--background-color);
     top: 5.75vh;
+
 }
 
 .difficulty-title {
-    grid-column: 3 / 4;
+    grid-column: 4 / 4;
 }
 
 .tick-list .route-name {
@@ -42,12 +43,20 @@
    align-self: center;
 }
 
-.remove-tick {
-    justify-self: center;
-    align-self: center;
-    height: 2.5vh;
-    margin: .15vh 0;
+.update-tick, .remove-tick {
+    cursor: pointer;
     letter-spacing: .1vw;
+    height: 2.5vh;
+    margin: .15vh;
+    align-self: center;
     background-color: var(--btn-background);
     color: white;
+}
+
+.update-tick {
+    justify-self: end;
+}
+
+.remove-tick {
+    justify-self: start;
 }
