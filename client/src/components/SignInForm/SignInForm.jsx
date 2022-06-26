@@ -2,7 +2,7 @@ import './SignInForm.css';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { SIGNIN_USER } from '../../utils/mutations';
-
+import ToggleBtn from '../ToggleBtn/ToggleBtn';
 import Auth from '../../utils/auth';
 
 const SignInForm = ({ handleForm }) => {
@@ -66,7 +66,9 @@ const SignInForm = ({ handleForm }) => {
                 />
                 <button className='signin-btn' type='submit'> Submit </button>
                 <p> First time? <span className='toggle-signin' onClick={handleForm} > Register here </span></p>
+                <ToggleBtn />
             </form>
+            
         </section>
         
      );

@@ -8,7 +8,7 @@
     align-self: center;
     height: auto;
     width: 35vw;
-    top: -5vh;
+    top: -1.35vh;
 }
 
 .signin-form {
@@ -24,7 +24,7 @@
 }
 
 .signin-form p {
-    padding: 2vh 0 5vh 0;
+    padding: 2vh 0 2vh 0;
 }
 
 .signin-form .password {

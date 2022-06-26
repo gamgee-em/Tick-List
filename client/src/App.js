@@ -16,12 +16,15 @@ import Navbar from './components/Navbar/Navbar';
 import DataForm from './components/DataForm/DataForm';
 import RegisterForm from './components/RegisterForm/RegisterForm';
 import SignInForm from './components/SignInForm/SignInForm';
+import ToggleBtn from './components/ToggleBtn/ToggleBtn';
 import Profile from './pages/Profile/Profile';
 import Chart from 'react-google-charts';
 import TickList from './components/TickList/TickList';
 import Footer from './components/Footer/Footer';
 
+
 const errorLink = onError(({ graphqlErrors, networkError}) => {
+    
     if (graphqlErrors) {
         graphqlErrors.map(({ message, location, path }) => {
           return alert(`Graphql Error ${message}`);
@@ -35,6 +38,7 @@ const httpLink = from ([
 ]);
 
 const authLink = setContext((_, { headers }) => {
+
     const token = localStorage.getItem('id_token');
 
     return {
@@ -45,23 +49,32 @@ const authLink = setContext((_, { headers }) => {
     };
 });
 
-const client = new ApolloClient({
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
-});
+const client = new ApolloClient(
+    {
+        link: authLink.concat(httpLink),
+        cache: new InMemoryCache(),
+    }
+);
 
 const App = () => {
+
     return (
+
         <ApolloProvider client={client}>
+
             <Router>
+
                 <Navbar />
                 <Routes>
-                    <Route path='/' exact element={ <Home RegisterForm={ RegisterForm } SignInForm={ SignInForm }/> } />
-                    <Route path='/me' exact element={ <Profile DataForm={ DataForm } Chart={ Chart } TickList={ TickList }/>} />
+                    <Route path='/' exact element={ <Home RegisterForm={ RegisterForm } SignInForm={ SignInForm } /> } />
+                    <Route path='/me' exact element={ <Profile DataForm={ DataForm } Chart={ Chart } TickList={ TickList } />} />
                 </Routes>
                 <Footer />
+
             </Router>
+
         </ApolloProvider>
+
     );
 };
 
