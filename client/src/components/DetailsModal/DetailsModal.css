@@ -1,0 +1,19 @@
+.detail-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+    display: flex;
+    flex-direction: column;
+  background-color: white;
+  transition: all ease-in-out 5s;
+}
+
+.exit-detail {
+    align-self: flex-end;
+    padding: 1vh 1vh 0 0 ;
+}
+
+.detail-container h4 {
+    align-self: center;
+}

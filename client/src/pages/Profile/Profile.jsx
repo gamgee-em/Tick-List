@@ -3,8 +3,8 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
-//import { Chart } from '../../components/Chart/Chart';
 import { Link } from 'react-router-dom';
+
 const Profile = ({ DataForm, Chart, TickList }) => {
   const { _id: userParam } = useParams();
 

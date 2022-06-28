@@ -3,8 +3,13 @@ import Auth from '../../utils/auth';
 import { DELETE_TICK } from '../../utils/mutations';
 import './TickList.css';
 import { capFirstChar } from '../../utils/helpers';
+import DetailsModal from '../DetailsModal/DetailsModal';
+import { useState } from 'react';
 
 const TickList = ({ user }) => {
+
+  const [ showDetails, setShowDetails ] = useState(false);
+
   const [deleteTick /* , { error }  */] = useMutation(DELETE_TICK);
 
   const removeTick = async (_id) => {
@@ -35,7 +40,7 @@ const TickList = ({ user }) => {
           <div className='tick-list' key={tick._id}>
             <div className='route-name'>{capFirstChar(tick.route_name)} </div>
             <button
-              className='update-tick' /* onClick={() => removeTick(tick._id)} */
+              className='update-tick' onClick={() => setShowDetails(!showDetails)}
             >
               {' '}
               Update{' '}
@@ -51,7 +56,9 @@ const TickList = ({ user }) => {
           </div>
         );
       })}
+      { showDetails && <DetailsModal  showDetails={showDetails} setShowDetails={setShowDetails}/> }
     </section>
+    
   );
 };
 
