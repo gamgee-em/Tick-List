@@ -1,37 +1,39 @@
 .profile-container {
-    display: flex;
-    flex-direction: column;
-    height: 95vh;
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
 }
 
 .chart {
-    width: 100vw;
+  width: 100vw;
 }
 
 .chart svg:first-child {
-    border-radius: var(--border-radius);
-    fill: var(--background-color);
-}
-
-#reactgooglegraph-1 > div > div:nth-child(1) > div > svg > g:nth-child(4) > g:nth-child(2) > g:nth-child(2) > rect:nth-child(1) {
-    
+  border-radius: var(--border-radius);
+  fill: var(--background-color);
 }
 
 svg > rect {
-    fill: var(--background-color);
+  fill: var(--background-color);
 }
 
-#reactgooglegraph-1 > div > div:nth-child(1) > div > svg > g:nth-child(3) > rect {
-    margin-left: 20vh;
+#reactgooglegraph-1
+  > div
+  > div:nth-child(1)
+  > div
+  > svg
+  > g:nth-child(3)
+  > rect {
+  margin-left: 20vh;
 }
 
 .err-message {
-    position: absolute;
-    text-align: center;
-    top: 30%;
+  position: absolute;
+  text-align: center;
+  top: 30%;
 }
 
 .err-message a {
-    color: rgb(0, 8, 255);
-    text-decoration: none;
+  color: rgb(0, 8, 255);
+  text-decoration: none;
 }

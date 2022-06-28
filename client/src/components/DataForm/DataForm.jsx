@@ -7,64 +7,63 @@ import { capFirstChar } from '../../utils/helpers';
 
 import Auth from '../../utils/auth';
 const DataForm = ({ user }) => {
+  const [tickState, setTickState] = useState({
+    route_name: '',
+    difficulty: '',
+  });
 
-    const [ tickState, setTickState ] = useState({
-        route_name: '',
-        difficulty: '',
+  const [addTick /* , { error } */] = useMutation(ADD_TICK);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    return setTickState({ ...tickState, [name]: value });
+  };
+
+  const createTick = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await addTick({
+        variables: {
+          ...tickState,
+          user: Auth.getProfile().data.username,
+        },
+      });
+      console.log('CreateTick: ', { data });
+    } catch (error) {
+      console.error(error);
+    }
+
+    //! reset form
+    setTickState({
+      route_name: '',
+      difficulty: '',
     });
-   
-    const [ addTick  /* , { error } */ ] = useMutation(ADD_TICK);
+  };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        return setTickState({ ...tickState, [name]: value });
-    };
-
-    const createTick = async (e) => {
-        e.preventDefault();
-        try {
-            const {data} = await addTick({
-                 variables: {
-                    ...tickState,
-                    user: Auth.getProfile().data.username
-                }
-            });
-            console.log('CreateTick: ', {data})
-        } catch(error) {
-            console.error(error);
-        }
-        
-        //! reset form
-        setTickState({
-            route_name: '',
-            difficulty: '',
-        });
-    };
-
-    return ( 
-        <section className="data-form">
-            <h2> {capFirstChar(user.username)}'s Boulder Information </h2>
-            <form className='boulder-form' onSubmit={createTick}>
-                <input 
-                    name='route_name'
-                    type='text'
-                    placeholder='Route Name'
-                    value={tickState.route_name}
-                    onChange={handleChange}
-                    required
-                />
-                <input  
-                    className='difficulty'
-                    name='difficulty'
-                    type='number'
-                    placeholder='Difficulty'
-                    value={tickState.difficulty}
-                    onChange={handleChange}
-                />
-                <button type='submit'> Submit </button>
-            </form>
-        </section>
-    );
+  return (
+    <section className='data-form'>
+      <h2> {capFirstChar(user.username)}'s Boulder Information </h2>
+      <form className='boulder-form' onSubmit={createTick}>
+        <input
+          name='route_name'
+          type='text'
+          placeholder='Route Name'
+          value={tickState.route_name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          className='difficulty'
+          name='difficulty'
+          type='number'
+          placeholder='Difficulty'
+          value={tickState.difficulty}
+          onChange={handleChange}
+        />
+        <button type='submit'> Submit </button>
+      </form>
+    </section>
+  );
 };
 
 //! move to own component to use in 'the climbers fieldguide' page

@@ -1,55 +1,56 @@
 .signin {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .signin img {
-    position: relative;
-    align-self: center;
-    height: auto;
-    width: 35vw;
-    top: -1.35vh;
+  position: relative;
+  align-self: center;
+  height: auto;
+  width: 35vw;
+  top: -1.35vh;
 }
 
 .signin-form {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-    text-align: center;
-    border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  text-align: center;
+  border-radius: var(--border-radius);
 }
 
 .signin-form h4 {
-    margin: 0;
+  margin: 0;
 }
 
 .signin-form p {
-    padding: 2vh 0 2vh 0;
+  padding: 2vh 0 2vh 0;
 }
 
 .signin-form .password {
-    margin: 1vh 0;
+  margin: 1vh 0;
 }
 
-.signin-form input, button {
-    border: none;
-    outline: none;
-    height: 6vh;
-    border-radius: var(--border-radius);
+.signin-form input,
+button {
+  border: none;
+  outline: none;
+  height: 6vh;
+  border-radius: var(--border-radius);
 }
 
 form .signin-btn {
-    color: white;
-    font-weight: bold;
-    background-color: var(--btn-background);
+  color: white;
+  font-weight: bold;
+  background-color: var(--btn-background);
 }
 
 form .signin-btn:hover {
-    cursor: pointer;
-    transition: .5s;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .toggle-signin {
-    font-weight: 500;
-    color: rgb(0, 8, 255);
+  font-weight: 500;
+  color: rgb(0, 8, 255);
 }

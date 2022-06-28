@@ -1,62 +1,63 @@
 .tick-list-container {
-    overflow: scroll;
-    border-radius: var(--border-radius);
+  overflow: scroll;
+  border-radius: var(--border-radius);
 }
 
 .tick-list-container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .tick-list-container h3 {
-    position: sticky;
-    top: 0;
-    margin: 0;
-    padding: 1.5vh 0;
-    text-align: center;
-    background-color: var(--background-color);
+  position: sticky;
+  top: 0;
+  margin: 0;
+  padding: 1.5vh 0;
+  text-align: center;
+  background-color: var(--background-color);
 }
 
-.tick-list-header, div .tick-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
+.tick-list-header,
+div .tick-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
 }
 
 .tick-list-header {
-    position: sticky;
-    background-color: var(--background-color);
-    top: 5.75vh;
-
+  position: sticky;
+  background-color: var(--background-color);
+  top: 5.75vh;
 }
 
 .difficulty-title {
-    grid-column: 4 / 4;
+  grid-column: 4 / 4;
 }
 
 .tick-list .route-name {
-    justify-self: center;
-    align-self: center;
+  justify-self: center;
+  align-self: center;
 }
 
 .tick-list .difficulty {
-   justify-self: center;
-   align-self: center;
+  justify-self: center;
+  align-self: center;
 }
 
-.update-tick, .remove-tick {
-    cursor: pointer;
-    letter-spacing: .1vw;
-    height: 2.5vh;
-    margin: .15vh;
-    align-self: center;
-    background-color: var(--btn-background);
-    color: white;
+.update-tick,
+.remove-tick {
+  cursor: pointer;
+  letter-spacing: 0.1vw;
+  height: 2.5vh;
+  margin: 0.15vh;
+  align-self: center;
+  background-color: var(--btn-background);
+  color: white;
 }
 
 .update-tick {
-    justify-self: end;
+  justify-self: end;
 }
 
 .remove-tick {
-    justify-self: start;
+  justify-self: start;
 }

@@ -1,57 +1,57 @@
 .register {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .register img {
-    position: relative;
-    align-self: center;
-    height: auto;
-    width: 35vw;
-    top: -1.35vh;
+  position: relative;
+  align-self: center;
+  height: auto;
+  width: 35vw;
+  top: -1.35vh;
 }
 
 .register-form {
-    display: flex;
-    flex-direction: column;
-    width: 90vw;
-    text-align: center;
-    border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  text-align: center;
+  border-radius: var(--border-radius);
 }
 
 .register-form h4 {
-    margin: 0;
+  margin: 0;
 }
 
 .register-form p {
-    padding: 2vh 0 2vh 0;
+  padding: 2vh 0 2vh 0;
 }
 
 .register-form .email {
-    margin: 1vh 0;
+  margin: 1vh 0;
 }
 
-.register-form input, .register-btn {
-    border: none;
-    outline: none;
-    height: 6vh;
-    border-radius: var(--border-radius);
+.register-form input,
+.register-btn {
+  border: none;
+  outline: none;
+  height: 6vh;
+  border-radius: var(--border-radius);
 }
 
 form .register-btn {
-    margin-top: 1vh;
-    color: white;
-    font-weight: bold;
-    background-color: var(--btn-background)
+  margin-top: 1vh;
+  color: white;
+  font-weight: bold;
+  background-color: var(--btn-background);
 }
 
 form .register-btn:focus {
-    cursor: pointer;
-    transition: .5s;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-
 .toggle-register {
-    font-weight: 500;
-    color: rgb(0, 8, 255);
+  font-weight: 500;
+  color: rgb(0, 8, 255);
 }

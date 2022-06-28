@@ -1,37 +1,37 @@
 .data-form {
-   padding: 4vh 2vh 2vh 2vh;
-   justify-content: center;
+  padding: 4vh 2vh 2vh 2vh;
+  justify-content: center;
 }
 
 section h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .boulder-form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
 .boulder-form .select {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
 .boulder-form .difficulty {
-    margin: 1vh 0;
+  margin: 1vh 0;
 }
 
-.boulder-form input, button {
-    border: none;
-    outline: none;
-    height: 6vh;
-    border-radius: var(--border-radius);
-
+.boulder-form input,
+button {
+  border: none;
+  outline: none;
+  height: 6vh;
+  border-radius: var(--border-radius);
 }
 
 .boulder-form button {
-    color: white;
-    background-color: var(--btn-background);
+  color: white;
+  background-color: var(--btn-background);
 }

@@ -1,24 +1,30 @@
 import './Home.css';
 import { useState } from 'react';
+import Auth from '../../utils/auth';
 
 const Home = ({ RegisterForm, SignInForm }) => {
-    const [ formState, setFormState ] = useState(true);
+  //* if user revisits homepage while token is valid & rememberMe is true
+  //* redirect to profile
+  if (localStorage.getItem('remember_me') === 'true' && Auth.loggedIn()) {
+    window.location.replace('/me');
+  }
 
-    const handleForm = (e) => {
-        e.preventDefault();
-        return !formState ? setFormState(true) : setFormState(false);
-    };
+  const [formState, setFormState] = useState(true);
 
-    return ( 
-        <main className='home-container'>
-            { !formState ? (
-                <SignInForm handleForm={handleForm} />
-            ) : (
-                <RegisterForm handleForm={handleForm} />
-                )
-            }
-        </main>
-     );
+  const handleForm = (e) => {
+    e.preventDefault();
+    return !formState ? setFormState(true) : setFormState(false);
+  };
+
+  return (
+    <main className='home-container'>
+      {!formState ? (
+        <SignInForm handleForm={handleForm} />
+      ) : (
+        <RegisterForm handleForm={handleForm} />
+      )}
+    </main>
+  );
 };
 
 export default Home;
