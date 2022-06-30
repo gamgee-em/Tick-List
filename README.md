@@ -153,6 +153,109 @@
 
 <div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
 
+<h2> Queries </h2>
+
+    query getAllUsers {
+        getAllUsers {
+            _id
+            token
+            username
+            email
+            ticks {
+                route_name
+                difficulty
+            }
+        }
+    }
+
+    query getSingleUser($_id: ID!) {
+        getSingleUser(_id: $_id) {
+            _id
+            token
+            username
+            email
+            ticks {
+                route_name
+                difficulty
+            }
+        }
+    }
+
+    query me {
+        me {
+            _id
+            username
+            email
+            ticks {
+                _id
+                route_name
+                difficulty
+            }
+        }
+    }
+
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
+
+<h2> Mutations </h2>
+
+    mutation addUser($username: String!, $email: String!, $password: String!) {
+        addUser(username: $username, email: $email, password: $password) {
+            token
+            user {
+                _id
+                username
+            }
+        }
+    }
+
+    mutation signInUser($username: String!, $password: String!) {
+        signInUser(username: $username, password: $password) {
+            token
+            user {
+                _id
+                username
+            }
+        }
+    }
+
+    mutation addTick($route_name: String!, $difficulty: String!) {
+        addTick(route_name: $route_name, difficulty: $difficulty) {
+            _id
+            ticks {
+                route_name
+                difficulty
+            }
+        }
+    }
+
+    mutation deleteTick($_id: ID!) {
+        deleteTick(_id: $_id) {
+            _id
+            username
+            email
+            ticks {
+                _id
+                route_name
+                difficulty
+            }
+        }
+    }
+
+    mutation updateTick($_id: ID!) {
+        updateTick(_id: $_id, route_name: $route_name, difficulty: $diffculty) {
+            _id
+            username
+            email
+            ticks {
+                _id
+                route_name
+                difficulty
+            }
+        }
+    }
+
+<div align='center'> ⛰️&emsp; ⛰️&emsp; ⛰️&emsp;  </div>
+
 <h2 id='license'> License </h2>
 <p> Distributed under the MIT License. See <a href='https://github.com/gamgee-em/Tick-List/blob/main/LICENSE.txt'> LICENSE.txt </a> for additional information. </p>
 
